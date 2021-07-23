@@ -1,0 +1,3 @@
+Personnaliser le mode de commutation DPI 1: 500/1000/2000/3000/5000 ajusté via les boutons de la souris - Personnaliser le mode de commutation DPI 2: Le DPI peut être ajusté librement de ± 100 de 100 à 10000 via le logiciel de programmation - Taux de polling: Jusqu'à 1000 Hz; commutable: 125HZ / 250HZ / 500HZ / 1000HZ (500HZ par défaut)  - Boutons: 8 boutons (dont un bouton de tir rapide) - Système de suivi: Interface optique : USB 2.0 pleine vitesse. 3.0 - Taille: 6,3 x 4,3 x 2 pouces - Longueur USB: 1,8 m de câble en fibre tressée
+
+prix : 69.000 TND
