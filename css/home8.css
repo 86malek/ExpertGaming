@@ -4370,12 +4370,14 @@ h2.title-category {
   color: #f7bb11;
 }
 .products-list.grid .product-layout .product-item-container {
+  min-height: 534px !important;
   margin: 15px 0;
   padding: 15px;
   border: 1px solid #dddddd;
   overflow: hidden;
 }
 .products-list.grid .product-layout .product-item-container .left-block {
+  min-height: 253px;
   position: relative;
   float: left;
   width: 100%;
