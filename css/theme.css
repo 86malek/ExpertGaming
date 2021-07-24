@@ -4579,7 +4579,7 @@ div.tab-slider
   .grid.ltabs-items
   .product-layout
   .product-item-container {
-  min-height: 483px !important;
+  min-height: 534px !important;
   margin: 15px 0;
   padding: 15px;
   border: 1px solid #dddddd;
@@ -4592,6 +4592,7 @@ div.tab-slider
   .product-layout
   .product-item-container
   .left-block {
+  min-height: 253px;
   position: relative;
   float: left;
   width: 100%;
