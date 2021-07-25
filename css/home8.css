@@ -2373,8 +2373,8 @@ STRUCTURE
 }
 
 .shopping_cart a.top_cart .handle .bi{
-  color: #191919;
-  font-size: 25px;
+  color: #fff;
+  font-size: 20px;
   padding: 1px 5px;
   display: block;
   position: relative;
