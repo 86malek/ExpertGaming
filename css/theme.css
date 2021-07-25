@@ -2356,7 +2356,10 @@ STRUCTURE
 
 /*==========================BLOCK CART ======================*/
 .shopping_cart {
-  padding: 0;
+  padding-right: 5px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
 }
 .shopping_cart .btn-group {
   display: block;
@@ -2379,12 +2382,23 @@ STRUCTURE
   white-space: nowrap;
 }
 .shopping_cart a.top_cart .handle {
-  background: url("../image/theme//icons/icon_minicart.png") no-repeat 8px 8px;
+  /* background: url("../image/theme//icons/icon_minicart.png") no-repeat 8px 8px; */
   background-color: #f7bb11;
   width: 36px;
   height: 34px;
   margin: 5px 10px;
+  line-height: 33px;
+  text-align: center;
 }
+
+.shopping_cart a.top_cart .handle .bi{
+  color: #fff;
+  font-size: 20px;
+  padding: 1px 5px;
+  display: block;
+  position: relative;
+}
+
 .shopping_cart .shoppingcart-box {
   padding: 15px;
   border-radius: 0;

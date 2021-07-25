@@ -100,84 +100,36 @@
 				<!-- //Main Menu -->
 
 				<!-- Shopping Cart -->
-					<div class="col-lg-2 col-md-3 col-sm-4 col-xs-12 shopping_cart pull-right">
-					<!--cart-->
-					<div id="cart" class="btn-group btn-shopping-cart">
-						<a data-loading-text="Loading..." class="top_cart dropdown-toggle" data-toggle="dropdown">
+					<div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 shopping_cart pull-right">
+					<!--panier-->
+					<div class="btn-group btn-shopping-cart">
+						<a href="http://<?php echo $_SERVER['SERVER_NAME'] ?>/ExpertGaming/Panier" class="top_cart dropdown-toggle">
 							<div class="shopcart">
-								<span class="handle pull-left"></span>
-								<span class="title">Panier</span>
-								<p class="text-shopping-cart cart-total-full">2 article(s) - 1,500 TND </p>
+								<span class="handle pull-left"><i class="bi bi-cart3"></i></span>
 							</div>
 						</a>
-
-						<ul class="tab-content content dropdown-menu pull-right shoppingcart-box" role="menu">
-							<li>
-								<table class="table table-striped">
-									<tbody>
-										<tr>
-											<td class="text-center" style="width:70px">
-												<a href="#"> <img src="http://<?php echo $_SERVER['SERVER_NAME']?>/ExpertGaming/image/demo/shop/product/resize/2.jpg" style="width:70px" alt="Filet Mign" title="Filet Mign" class="preview"> </a>
-											</td>
-											<td class="text-left"> <a class="cart_product_name" href="#">Casque</a> </td>
-											<td class="text-center"> x1 </td>
-											<td class="text-center"> 262 TND </td>
-											<td class="text-right">
-												<a href="#" class="fa fa-edit"></a>
-											</td>
-											<td class="text-right">
-												<a onclick="cart.remove('2');" class="fa fa-times fa-delete"></a>
-											</td>
-										</tr>
-										<tr>
-											<td class="text-center" style="width:70px">
-												<a href="#"> <img src="http://<?php echo $_SERVER['SERVER_NAME']?>/ExpertGaming/image/demo/shop/product/resize/3.jpg" style="width:70px" alt="Canon EOS 5D" title="Canon EOS 5D" class="preview"> </a>
-											</td>
-											<td class="text-left"> <a class="cart_product_name" href="#">Pc Gaming</a> </td>
-											<td class="text-center"> x1 </td>
-											<td class="text-center"> 1.000 TND </td>
-											<td class="text-right">
-												<a href="#" class="fa fa-edit"></a>
-											</td>
-											<td class="text-right">
-												<a onclick="cart.remove('1');" class="fa fa-times fa-delete"></a>
-											</td>
-										</tr>
-									</tbody>
-								</table>
-							</li>
-							<li>
-								<div>
-									<table class="table table-bordered">
-										<tbody>
-											<tr>
-												<td class="text-left"><strong>Total</strong>
-												</td>
-												<td class="text-right">1,060 TND</td>
-											</tr>
-											<tr>
-												<td class="text-left"><strong>Tax (-2.00)</strong>
-												</td>
-												<td class="text-right">2 TND</td>
-											</tr>
-											<tr>
-												<td class="text-left"><strong>TVA (12%)</strong>
-												</td>
-												<td class="text-right">200 TND</td>
-											</tr>
-											<tr>
-												<td class="text-left"><strong>Total</strong>
-												</td>
-												<td class="text-right">1,262 TND</td>
-											</tr>
-										</tbody>
-									</table>
-									<p class="text-right"> <a class="btn view-cart" href="Panier"><i class="fa fa-shopping-cart"></i>Voir le panier</a>&nbsp;&nbsp;&nbsp; <a class="btn btn-mega checkout-cart" href="#"><i class="fa fa-share"></i>Vérifier</a> </p>
-								</div>
-							</li>
-						</ul>
 					</div>
-					<!--//cart-->
+					<!--//panier-->
+
+					<!--Identification-->
+					<div class="btn-group btn-shopping-cart">
+						<a href="http://<?php echo $_SERVER['SERVER_NAME'] ?>/ExpertGaming/Identification" class="top_cart dropdown-toggle">
+							<div class="shopcart">
+								<span class="handle pull-left"><i class="bi bi-heart"></i></span>
+							</div>
+						</a>				
+					</div>
+					<!--//Identification-->
+
+					<!--favoris-->
+					<div class="btn-group btn-shopping-cart">
+						<a href="http://<?php echo $_SERVER['SERVER_NAME'] ?>/ExpertGaming/Identification" class="top_cart dropdown-toggle">
+							<div class="shopcart">
+								<span class="handle pull-left"><i class="bi bi-person"></i></span>
+							</div>
+						</a>				
+					</div>
+					<!--//favoris-->
 				</div>
 				<!-- //Shopping Cart -->
 			</div>
@@ -202,7 +154,7 @@
 											<span class="icon-bar"></span>
 											<span class="icon-bar"></span>
 										</button>
-										Navigation		
+										Menu		
 									</div>
 									
 									<div class="megamenu-wrapper">
