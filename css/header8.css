@@ -155,7 +155,10 @@
   color: #222222;
 }
 .type_8 .shopping_cart {
-  padding: 0 15px;
+  padding-right: 5px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
 }
 .type_8 .shopping_cart a.top_cart {
   display: inline-block;
