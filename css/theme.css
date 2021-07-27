@@ -2384,19 +2384,13 @@ STRUCTURE
 .shopping_cart a.top_cart .handle {
   /* background: url("../image/theme//icons/icon_minicart.png") no-repeat 8px 8px; */
   background-color: #f7bb11;
-  width: 36px;
-  height: 34px;
+  width: 35px;
+  height: 35px;
   margin: 5px 10px;
-  line-height: 33px;
-  text-align: center;
-}
-
-.shopping_cart a.top_cart .handle .bi{
+  line-height: 35px;
   color: #fff;
-  font-size: 20px;
-  padding: 1px 5px;
-  display: block;
-  position: relative;
+  font-size: 22px;
+  text-align: center;
 }
 
 .shopping_cart .shoppingcart-box {
@@ -2404,6 +2398,20 @@ STRUCTURE
   border-radius: 0;
   border-top: 3px solid #f7bb11;
   min-width: 300px;
+}
+.shopping_cart .shopcart .cart-counter{
+  position: absolute;
+  top: -5px;
+  right: 0;
+  color: #fff;
+  background-color: #e74c3c;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  line-height: 18px;
+  font-size: 10px;
+  text-align: center;
+  cursor: pointer;
 }
 @media (min-width: 1200px) {
   .shopping_cart .shoppingcart-box:before {
