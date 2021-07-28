@@ -1,7 +1,7 @@
 <header id="header" class="variantleft type_8">
 	
 	<!-- Header Top -->
-	<div class="header-top compact-hidden">
+	<!-- <div class="header-top compact-hidden">
 		<div class="container">
 			<div class="row">
 				<div class="header-top-left form-inline col-sm-5 col-xs-12 compact-hidden">
@@ -14,14 +14,14 @@
 							<li class="account" id="my_account"><a href="http://<?php echo $_SERVER['SERVER_NAME']?>/ExpertGaming/Mon_compte" title="My Account" class="btn btn-xs dropdown-toggle" > <i class="fa fa-user" ></i> Mon Compte </a></li>
 							<li class="checkout"><a href="http://<?php echo $_SERVER['SERVER_NAME']?>/ExpertGaming/Inscription" class="" title="S'inscrire"><i class="fa fa-sign-in-alt"></i> S'inscrire</a></li>
 							<li class="wishlist"><a href="http://<?php echo $_SERVER['SERVER_NAME']?>/ExpertGaming/Liste_des_favoris" class="top-link-wishlist" title="Wish List (2)"><i class="fa fa-heart"></i><span> Favoris (2) </span></a></li>
-							<!-- <li class="checkout"><a href="checkout.html" class="top-link-checkout" title="Checkout"><i class="fa fa-check-square" ></i> Checkout</a></li> -->
+							<li class="checkout"><a href="checkout.html" class="top-link-checkout" title="Checkout"><i class="fa fa-check-square" ></i> Checkout</a></li>
 							<li class="signin"><a href="http://<?php echo $_SERVER['SERVER_NAME']?>/ExpertGaming/Identification" class="top-link-checkout" title="S'identifier"><i class="fa fa-lock" ></i> S'identifier </a></li>	
 						</ul>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 	<!-- //Header Top -->
 
 	<!-- Header center -->
@@ -94,7 +94,7 @@
 				<!-- //Search -->
 				
 				<!-- Main Menu -->
-				<!-- <div class="phone-contact col-md-2  hidden-md hidden-sm hidden-xs">
+				<!-- <div class="phone-contact col-md-2 hidden-md hidden-sm hidden-xs">
 						
 				</div> -->
 				<!-- //Main Menu -->
@@ -106,22 +106,24 @@
 						<a href="http://<?php echo $_SERVER['SERVER_NAME'] ?>/ExpertGaming/Panier" class="top_cart dropdown-toggle">
 							<div class="shopcart">
 								<span class="handle pull-left"><i class="bi bi-cart3"></i></span>
+								<span class="cart-counter">1</span>
 							</div>
 						</a>
 					</div>
 					<!--//panier-->
 
-					<!--Identification-->
+					<!--favoris-->
 					<div class="btn-group btn-shopping-cart">
 						<a href="http://<?php echo $_SERVER['SERVER_NAME'] ?>/ExpertGaming/Identification" class="top_cart dropdown-toggle">
 							<div class="shopcart">
 								<span class="handle pull-left"><i class="bi bi-heart"></i></span>
+								<span class="cart-counter">2</span>
 							</div>
 						</a>				
 					</div>
-					<!--//Identification-->
+					<!--//favoris-->
 
-					<!--favoris-->
+					<!--Identification-->
 					<div class="btn-group btn-shopping-cart">
 						<a href="http://<?php echo $_SERVER['SERVER_NAME'] ?>/ExpertGaming/Identification" class="top_cart dropdown-toggle">
 							<div class="shopcart">
@@ -129,7 +131,7 @@
 							</div>
 						</a>				
 					</div>
-					<!--//favoris-->
+					<!--//Identification-->
 				</div>
 				<!-- //Shopping Cart -->
 			</div>
