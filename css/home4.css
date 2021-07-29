@@ -2307,7 +2307,10 @@ STRUCTURE
 
 /*==========================BLOCK CART ======================*/
 .shopping_cart {
-  padding: 0;
+  padding-right: 5px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
 }
 .shopping_cart .btn-group {
   display: block;
@@ -2330,12 +2333,17 @@ STRUCTURE
   white-space: nowrap;
 }
 .shopping_cart a.top_cart .handle {
-  background: url("../image/theme//icons/icon_minicart.png") no-repeat 8px 8px;
+  /* background: url("../image/theme//icons/icon_minicart.png") no-repeat 8px 8px; */
   background-color: #f7bb11;
-  width: 36px;
-  height: 34px;
+  width: 35px;
+  height: 35px;
   margin: 5px 10px;
+  line-height: 35px;
+  color: #fff;
+  font-size: 22px;
+  text-align: center;
 }
+
 .shopping_cart .shoppingcart-box {
   padding: 15px;
   border-radius: 0;
@@ -4570,6 +4578,7 @@ div.tab-slider
   .product-layout
   .product-item-container,
 div.so-deal .grid.extraslider-inner .product-layout .product-item-container {
+  min-height: 534px !important;
   margin: 15px 0;
   padding: 15px;
   border: 1px solid #dddddd;
@@ -4587,6 +4596,7 @@ div.so-deal
   .product-layout
   .product-item-container
   .left-block {
+  min-height: 253px;
   position: relative;
   float: left;
   width: 100%;

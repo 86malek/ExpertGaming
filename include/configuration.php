@@ -17,7 +17,7 @@
 											
 											echo '
 
-												<div class="banner htmlconten1 col-lg-4 col-md-4 col-sm-6 col-xs-12">
+												<div class="banner htmlconten1 col-lg-4 col-md-12 col-sm-12 col-xs-12">
 													<div class="banners">
 														<div>
 			
@@ -43,7 +43,7 @@
 	</div>
 </div>
 
-<div class="module titleLine container-full">
+<div class="module titleLine container-full hidden-md hidden-sm hidden-xs">
 
 	<!-- baniere large-->
 
@@ -94,7 +94,7 @@
 									
 									echo '
 
-									<div class="banner htmlconten1 col-lg-4 col-md-4 col-sm-6 col-xs-12">
+									<div class="banner htmlconten1 col-lg-4 col-md-12 col-sm-12 col-xs-12">
 										<div class="banners">
 											<div>
 
