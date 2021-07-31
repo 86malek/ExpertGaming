@@ -15,7 +15,7 @@
 							echo '
 
 								<div class="item">
-								<a href="#"><img src="image/banner/' . $banniere['eg_banniere_image'] . '" alt="' . $banniere['eg_banniere_nom'] . '" class="img-responsive"></a>
+								<a href="#"><img src="' . $banniere['eg_banniere_image'] . '" alt="' . $banniere['eg_banniere_nom'] . '" class="img-responsive"></a>
 								</div>
 					
 							';

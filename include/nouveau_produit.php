@@ -10,7 +10,7 @@
 
 			<?php
 
-					$PDO_query_produit_nouveau = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_date >= '2021-06-04' ORDER BY RAND()");
+					$PDO_query_produit_nouveau = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND 	eg_produit_new = 1 ORDER BY RAND()");
 					$PDO_query_produit_nouveau->execute();
 
 					while ($produit_nouveau = $PDO_query_produit_nouveau->fetch()){
@@ -78,28 +78,28 @@
 											</div>
 													';
 
-													if($produit_nouveau['eg_produit_disponibilite'] == 0){
+													if($produit_nouveau['eg_produit_dispo'] == 0){
 
 														echo'
 	
-														<div class="stock"><span class="status-outofstock">Hors stock</span></div>
+														<div class="stock"><span class="label label-sale">Hors stock</span></div>
 	
 												';
 	
 	
-													}elseif($produit_nouveau['eg_produit_disponibilite'] == 1){
+													}elseif($produit_nouveau['eg_produit_dispo'] == 1){
 	
 														echo'
 														
-														<div class="stock"><span class="status-stock">Disponible</span></div>
+														<div class="stock"><span class="label label-dispo">Disponible</span></div>
 	
 														';
 	
-													}elseif($produit_nouveau['eg_produit_disponibilite'] == 2){
+													}elseif($produit_nouveau['eg_produit_dispo'] == 2){
 	
 														echo'
 														
-														<div class="stock"><span class="status-commande">Sur commande 48H</span></div>
+														<div class="stock"><span class="label label-new">Sur commande 48H</span></div>
 	
 														';
 	
@@ -107,7 +107,7 @@
 	
 														echo'
 														
-														<div class="stock"><span class="status-commande">Sur commande 72H</span></div>
+														<div class="stock"><span class="label label-new">Sur commande 72H</span></div>
 	
 														';
 	
