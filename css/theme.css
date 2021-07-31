@@ -4238,7 +4238,7 @@ h2.title-category {
 
 .label-sale {
   background: #e74c3c;
-  top: 10px;
+  top: 30px;
   left: 10px;
 }
 .label-sale:after {
@@ -4252,12 +4252,25 @@ h2.title-category {
 
 .label-new {
   background: #00abf0;
-  top: 10px;
+  top: 30px;
   right: 10px;
 }
 .label-new:after {
   content: "";
   border-top: 9px solid #00abf0;
+  border-right: 8px solid transparent;
+  position: absolute;
+  bottom: -6px;
+  right: 8px;
+}
+.label-dispo {
+  background: #0dd34f;
+  top: 30px;
+  right: 10px;
+}
+.label-dispo:after {
+  content: "";
+  border-top: 9px solid #0dd34f;
   border-right: 8px solid transparent;
   position: absolute;
   bottom: -6px;
@@ -4601,7 +4614,7 @@ div.tab-slider
   .grid.ltabs-items
   .product-layout
   .product-item-container {
-  min-height: 534px !important;
+  min-height: 490px !important;
   margin: 15px 0;
   padding: 15px;
   border: 1px solid #dddddd;
@@ -4614,7 +4627,7 @@ div.tab-slider
   .product-layout
   .product-item-container
   .left-block {
-  min-height: 253px;
+  min-height: 245px;
   position: relative;
   float: left;
   width: 100%;

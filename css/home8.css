@@ -4158,7 +4158,7 @@ h2.title-category {
 }
 
 .label-new,
-.label-sale {
+.label-dispo, .label-sale {
   font-size: 12px;
   height: 30px;
   padding: 3px 10px;
@@ -4173,7 +4173,7 @@ h2.title-category {
 
 .label-sale {
   background: #e74c3c;
-  top: 10px;
+  top: 30px;
   left: 10px;
 }
 .label-sale:after {
@@ -4187,12 +4187,25 @@ h2.title-category {
 
 .label-new {
   background: #00abf0;
-  top: 10px;
+  top: 30px;
   right: 10px;
 }
 .label-new:after {
   content: "";
   border-top: 9px solid #00abf0;
+  border-right: 8px solid transparent;
+  position: absolute;
+  bottom: -6px;
+  right: 8px;
+}
+.label-dispo {
+  background: #0dd34f;
+  top: 30px;
+  right: 10px;
+}
+.label-dispo:after {
+  content: "";
+  border-top: 9px solid #0dd34f;
   border-right: 8px solid transparent;
   position: absolute;
   bottom: -6px;

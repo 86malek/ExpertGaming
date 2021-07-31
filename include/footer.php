@@ -19,14 +19,14 @@
 										<div class="policy-inner">
 										<i class="ico-policy"></i>
 										<h4>LIVRAISON GRATUITE</h4>
-										<span>À partir de 3000 TND d'achat</span>
+										<span>À partir de 300 <sup>DT</sup> d'achat</span>
 										</div>
 									</div>
 									<div class="policy policy3 col-sm-4 col-xs-12">
 										<div class="policy-inner">
 										<i class="ico-policy"></i>
 										<h4>MONTAGE GRATUIT</h4>
-										<span>Service d'après vente</span>
+										<span>Service après vente</span>
 										</div>
 									</div>
 									
@@ -80,7 +80,7 @@
 							<div class="modcontent">
 								<ul class="menu">
 									<li><a href="http://<?php echo $_SERVER['SERVER_NAME']?>/ExpertGaming/Nous_contacter">Nous contacter</a></li>
-									<li><a href="#">Retour</a></li>
+									<!-- <li><a href="#">Retour</a></li> -->
 									<li><a href="Sitemap">Site Map</a></li>
 								</ul>
 							</div>

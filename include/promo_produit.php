@@ -70,7 +70,7 @@
 												</div>
 											</div>
 													';
-													if($produit_promo['eg_produit_disponibilite'] == 0){
+													if($produit_promo['eg_produit_dispo'] == 0){
 
 														echo'
 	
@@ -79,7 +79,7 @@
 												';
 	
 	
-													}elseif($produit_promo['eg_produit_disponibilite'] == 1){
+													}elseif($produit_promo['eg_produit_dispo'] == 1){
 	
 														echo'
 														
@@ -87,7 +87,7 @@
 	
 														';
 	
-													}elseif($produit_promo['eg_produit_disponibilite'] == 2){
+													}elseif($produit_promo['eg_produit_dispo'] == 2){
 	
 														echo'
 														
