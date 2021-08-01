@@ -28,6 +28,8 @@
 							<div class="banner__info">	
 								<h3>' . $accessoire['Marque_nom'] . ' - ' . $accessoire['Sous_cat_nom'] . '</h3>
 								<p>' . $accessoire['eg_raccourci_nom'] . '</p>
+								<span class="article-author">Post by : <a href="#"> Admin</a></span>
+								<span class="article-date">Date d\'insertion : Tue, Feb 16, 2016</span>
 							</div>
 						</div>
 
