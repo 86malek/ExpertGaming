@@ -123,9 +123,9 @@
     color: #999;
     /*text-transform: capitalize;*/
     min-width: 230px;
-    /*display: table;*/
+    display: table;
     margin: 0 auto;
-    /*text-align: center;*/ }
+    text-align: center; }
     @media (min-width: 1200px) {
       .block-policy-top .policy .policy-inner:after {
         content: "";

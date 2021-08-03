@@ -36,6 +36,7 @@
 	<link href="js/owl-carousel/owl.carousel.css" rel="stylesheet">
 	<link href="css/themecss/lib.css" rel="stylesheet">
 	<link href="js/jquery-ui/jquery-ui.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
 	<!-- Theme CSS
 	============================================ -->

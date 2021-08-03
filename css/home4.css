@@ -2941,7 +2941,7 @@ STRUCTURE
   line-height: 10px;
 }
 .blog-listitem .blog-item .itemBlogContent .blog-meta > span {
-  padding: 0 10px;
+  /* padding: 0 10px; */
   line-height: 15px;
   font-weight: normal;
   font-size: 11px;
