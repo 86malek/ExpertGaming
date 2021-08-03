@@ -84,7 +84,7 @@
 	
 														<div class="stock"><span class="status-outofstock">Hors stock</span></div>
 	
-												';
+														';
 	
 	
 													}elseif($produit_top_vente['eg_produit_disponibilite'] == 1){

@@ -84,7 +84,7 @@
 	
 														<div class="stock"><span class="label label-sale">Hors stock</span></div>
 	
-												';
+														';
 	
 	
 													}elseif($produit_nouveau['eg_produit_dispo'] == 1){
