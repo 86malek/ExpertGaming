@@ -2191,7 +2191,7 @@
 
 																';
 
-																if($produits['eg_produit_disponibilite'] == 0){
+																if($produits['eg_produit_dispo'] == 0){
 
 																	echo'
 
@@ -2200,7 +2200,7 @@
 															';
 
 
-																}elseif($produits['eg_produit_disponibilite'] == 1){
+																}elseif($produits['eg_produit_dispo'] == 1){
 
 																	echo'
 																	
@@ -2208,7 +2208,7 @@
 
 																	';
 
-																}elseif($produits['eg_produit_disponibilite'] == 2){
+																}elseif($produits['eg_produit_dispo'] == 2){
 	
 																	echo'
 																	
