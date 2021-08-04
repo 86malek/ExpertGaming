@@ -1,45 +1,50 @@
-<div class="module container-full home8--banner3">
-	<div class="container titleLine">
-		<h3 class="modtitle modtitle--small">Actualités</h3>
-	</div>
-		<div class="owl-banner__slider">
+<?php
+try {
+$PDO_query_comm = Bdd::connectBdd()->prepare("SELECT * FROM eg_comm WHERE eg_comm_statut = 1 ORDER BY eg_comm_date ASC");
+$PDO_query_comm->execute();
+$nb_comm = $PDO_query_comm->rowCount();
 
-			<?php
+if($nb_comm == 0){
 
-				$PDO_query_accessoires = Bdd::connectBdd()->prepare("SELECT eg_raccourci.eg_raccourci_id, eg_raccourci.eg_raccourci_image, eg_raccourci.eg_raccourci_nom, eg_marque.eg_marque_nom AS Marque_nom, eg_sous_categorie.eg_sous_categorie_nom as Sous_cat_nom FROM eg_raccourci INNER JOIN eg_marque ON eg_marque.eg_marque_id = eg_raccourci.eg_marque_id
-				INNER JOIN eg_sous_categorie ON eg_sous_categorie.eg_sous_categorie_id = eg_raccourci.eg_sous_categorie_id
-				WHERE eg_raccourci.eg_raccourci_statut = 1 ORDER BY eg_raccourci.eg_raccourci_id ASC");
-				$PDO_query_accessoires->execute();
 
-				
+}else{
+	echo '<div class="module container-full home8--banner3">
+			<div class="container titleLine">
+				<h3 class="modtitle modtitle--small">Actualités</h3>
+			</div>
+				<div class="owl-banner__slider">';
+					while ($comm = $PDO_query_comm->fetch()){
 
-				while ($accessoire = $PDO_query_accessoires->fetch()){
-					
-					echo '
+						$date = date_create($comm['eg_comm_date']);
+						$date = date_format($date, "d/m/Y");
+						echo '
 
-						<div class="banner__item">
-							<div class="banners banner__img">
-								<div>
-									<a title="' . $accessoire['Marque_nom'] . ' - ' . $accessoire['Sous_cat_nom'] . '" href="#">
-										<img src="image/banner/' . $accessoire['eg_raccourci_image'] . '" alt="' . $accessoire['Marque_nom'] . ' - ' . $accessoire['Sous_cat_nom'] . '">
-									</a>
+							<div class="banner__item">
+								<div class="banners banner__img">
+									<div>
+										<a title="' . $comm['eg_comm_titre'] . '" href="pages/actu_detail.php?id_actu='.$comm['eg_comm_id'].'">
+											<img src="' . $comm['eg_comm_img'] . '" alt="' . $comm['eg_comm_titre'] . '">
+										</a>
+									</div>
+								</div>
+								<div class="banner__info">	
+									<h3>' . $comm['eg_comm_sous_titre'] . '</h3>
+									<span class="article-author">Posté par : <a href="#">'.Membre::info($comm['eg_comm_user'], 'nom').' '.Membre::info($comm['eg_comm_user'], 'prenom').'</a></span> | <span class="article-date">Le : '.$date.'</span>
 								</div>
 							</div>
-							<div class="banner__info">	
-								<h3>' . $accessoire['Marque_nom'] . ' - ' . $accessoire['Sous_cat_nom'] . '</h3>
-								<p>' . $accessoire['eg_raccourci_nom'] . '</p>
-								<span class="article-author">Post by : <a href="#"> Admin</a></span>
-								<span class="article-date">Date d\'insertion : Tue, Feb 16, 2016</span>
-							</div>
-						</div>
 
 
-					';
-				}
-				$PDO_query_accessoires->closeCursor();
+						';
+					}
+	echo '</div>
 
-			?>		
+		</div>';
+}
+
+$PDO_query_comm->closeCursor();
+} catch (PDOException $x) {
+	die("Secured");
+}
+?>		
 			
-		</div>
-	
-</div>
+		
