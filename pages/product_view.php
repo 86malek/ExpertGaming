@@ -263,7 +263,7 @@
 			   
 			   
 												<div id="product">
-													<h4>Switch clavier</h4>
+													<!--<h4>Switch clavier</h4>
 													<div class="image_option_type form-group required">
 														<label class="control-label">Couleur</label>
 														<ul class="product-options clearfix"id="input-option231">
@@ -294,7 +294,7 @@
 															<li class="selected-option">
 															</li>
 														</ul>
-													</div>
+													</div>-->
 
 													<div class="form-group box-info-product">
 														<div class="option quantity">
