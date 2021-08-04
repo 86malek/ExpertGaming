@@ -10,7 +10,7 @@
 	<meta charset="utf-8">
     <meta name="keywords" content="Expert Gaming, Vente Pc Gamer, Carte Graphique, Processeur en Tunisie, Vente Pc Gamer et accessoires en Tunisie" />
     <meta name="robots" content="index, follow" />
-	<meta name="description" content="Expert Gaming : Vente Pc Gamer, Carte Graphique, Processeur en Tunisie, Vente Pc Gamer et accessoires en Tunisie"/>
+	<meta name="description" content="Expert Gaming : Vente de matériel Gaming et informatique en Tunisie"/>
 	
 	<!-- Mobile specific metas
 	============================================ -->
