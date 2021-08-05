@@ -2173,12 +2173,13 @@
 																			</a></h4>  
 																			<h5>Référence: ' . $produits['eg_produit_reference'] . '</h5>      
 																			<div class="ratings">
-																				<div class="rating-box">
-																					<span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star-o fa-stack-1x"></i></span>
-																					<span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star-o fa-stack-1x"></i></span>
-																					<span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star-o fa-stack-1x"></i></span>
-																					<span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star-o fa-stack-1x"></i></span>
-																					<span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i></span>
+																				<div class="rating-box">';
+																				$nb_etoile = $produits['eg_produit_etoiles'];
+																				for ($i=1 ; $i<=$nb_etoile ; $i++)
+																				{
+																				echo '<span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star-o fa-stack-1x"></i></span> ';
+																				}
+																				echo'
 																				</div>
 																			</div>
 

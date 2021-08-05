@@ -1,7 +1,7 @@
 <?php
 include('config.php');
 // variables de connexion
-define('DNS', 'mysql:host='.$PARAM_hote.';dbname='.$PARAM_nom_bd);
+define('DNS', 'mysql:host='.$PARAM_hote.';dbname='.$PARAM_nom_bd.';charset=utf8');
 define('USER', $PARAM_utilisateur);
 define('PASS', $PARAM_mot_passe);
 // base site
@@ -15,21 +15,21 @@ define('INSERT', 'INSERT INTO ');
 define('DELETE', 'DELETE ');
 define('ALL', '*');
 // les tables
-define('MEMBRE', ' FROM methode_membres');
-define('JETON', ' FROM methode_Secure');
-define('ACTIVATION', ' FROM methode_Activation');
-define('JETONMAIL', ' FROM methode_ActivationMail');
-define('MESSAGE', ' FROM methode_Messagerie');
-define('SMILEY', ' FROM methode_Smiley');
-define('ACCESPROFIL', ' FROM methode_AccesFiches');
-define('AVATAR', ' FROM methode_Avatar');
+define('MEMBRE', ' FROM eg_membres');
+define('JETON', ' FROM eg_secure');
+define('ACTIVATION', ' FROM eg_activation');
+define('JETONMAIL', ' FROM eg_activationaail');
+define('MESSAGE', ' FROM eg_messagerie');
+define('SMILEY', ' FROM eg_smiley');
+define('ACCESPROFIL', ' FROM eg_accesfiches');
+define('AVATAR', ' FROM eg_avatar');
 // les tables sans FROM
-define('MEMBREZ', 'methode_membres');
-define('JETONZ', 'methode_Secure');
-define('ACTIVATIONZ', 'methode_Activation');
-define('JETONMAILZ', 'methode_ActivationMail');
-define('MESSAGEZ', 'methode_Messagerie');
-define('ACCESPROFILZ', 'methode_AccesFiches');
+define('MEMBREZ', 'eg_membres');
+define('JETONZ', 'eg_secure');
+define('ACTIVATIONZ', 'eg_activation');
+define('JETONMAILZ', 'eg_activationmail');
+define('MESSAGEZ', 'eg_messagerie');
+define('ACCESPROFILZ', 'eg_accesfiches');
 // les variables de recherche sur la table membres
 define('ID', ' WHERE id=:id');
 define('NOI', ' WHERE id!=:id');
@@ -40,7 +40,7 @@ define('PROFIL', ' (pseudo, email, password) VALUES (:pseudo, :email, :pass)');
 define('IDMEMBRE', ' WHERE id_membre=:id');
 define('LOGIN', ' WHERE pseudo=:login');
 define('ACTIVMEMBRE', ' SET activation=:activer');
-define('MAJPROFIL', ' SET email=:email, tel=:tel, adresse=:adresse, cp=:cp, ville=:ville, genre=:genre, naissance=:naissance, nom=:nom, prenom=:prenom, description=:description, mailing=:mailing WHERE id=:id');
+define('MAJPROFIL', ' SET email=:email, tel=:tel, adresse=:adresse, cp=:cp, ville=:ville, genre=:genre, naissance=:naissance, nom=:nom, prenom=:prenom, description=:description, photo=:photo WHERE id=:id');
 define('MAJAVATAR', ' SET id_avatar=:idAvatar');
 define('MAJPASS', ' SET password=:newPass');
 define('NIVEAU', ' SET niveau=:niveau');
