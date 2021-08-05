@@ -1,6 +1,6 @@
 <div class="module container-full home8--banner3">
 	<div class="container titleLine">
-		<h3 class="modtitle modtitle--small">accessoires</h3>
+		<h3 class="modtitle modtitle--small">Accessoires</h3>
 	</div>
 		<div class="owl-banner__slider">
 
