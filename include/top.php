@@ -184,7 +184,22 @@
 
 																if($count_menu == 0){
 
+																	if($menu['eg_menu_id'] == 227){
+
+																		echo '
+																	
+
+															<li class="">
+															<a href="http://'.$_SERVER['SERVER_NAME'].'/ExpertGaming/pages/promo.php?menu_id='.$menu['eg_menu_id'].'" class="clearfix">
+
+															<strong>' . $menu['eg_menu_titre'] . '</strong>
+
+															';
+
+																	}else{
+
 																	echo '
+																	
 
 															<li class="">
 															<a href="http://'.$_SERVER['SERVER_NAME'].'/ExpertGaming/pages/products.php?menu_id='.$menu['eg_menu_id'].'" class="clearfix">
@@ -193,6 +208,8 @@
 
 															';
 
+																	}
+																	
 															if($menu['eg_menu_hot'] == 1){
 															
 															echo '

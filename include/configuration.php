@@ -1,5 +1,5 @@
 <div class="module titleLine">	
-	<h3 class="modtitle modtitle--small">Nouvelles configurations</h3>
+	<h3 class="modtitle modtitle--small">Configuration</h3>
 	<div class="module">
 		<div class="modcontent clearfix">
 			<div class="banner-wraps ">
@@ -9,6 +9,7 @@
 
 				
 								<?php
+								/*
 	
 									$PDO_query_img_config_top = Bdd::connectBdd()->prepare("SELECT * FROM eg_image_config WHERE eg_image_config_statut = 1 AND eg_image_config_type = 1 ORDER BY eg_image_config_price ASC LIMIT 3");
 									$PDO_query_img_config_top->execute();
@@ -34,6 +35,7 @@
 										}
 	
 									$PDO_query_img_config_top->closeCursor();
+									*/
 	
 								?>
 							
@@ -86,6 +88,7 @@
 
 
 							<?php
+							/*
 
 								$PDO_query_img_config_bottom = Bdd::connectBdd()->prepare("SELECT * FROM eg_image_config WHERE eg_image_config_statut = 1 AND eg_image_config_type = 3 ORDER BY eg_image_config_price ASC LIMIT 3");
 								$PDO_query_img_config_bottom->execute();
@@ -111,6 +114,7 @@
 								}
 
 									$PDO_query_img_config_bottom->closeCursor();
+							*/
 
 							?>
 					
