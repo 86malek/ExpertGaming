@@ -111,7 +111,7 @@
 	
 														echo'
 														
-														<div class="stock"><span class="label label-new">Sur commande 72H</span></div>
+														<div class="stock"><span class="label label-new">Sur commande</span></div>
 	
 														';
 	

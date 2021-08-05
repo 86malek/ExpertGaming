@@ -161,15 +161,19 @@
 												<div class="box-review form-group">
 													<div class="ratings">
 														<div class="rating-box">';
-														$nb_etoile = $quickview_product_description['eg_produit_etoiles'];
-														for ($i=1 ; $i<=$nb_etoile ; $i++)
-														{
-														echo '<span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star-o fa-stack-1x"></i></span> ';
-														}
-														echo'
+															$nb_etoile = $quickview_product_description['eg_produit_etoiles'];
+															for ($i=1 ; $i<=$nb_etoile ; $i++)
+															{
+															echo '<span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star-o fa-stack-1x"></i></span> ';
+															}
+															echo'
 														</div>
 													</div>
-													<a class="reviews_button" href="quickview.php.html" onclick="$(\'a[href=\'#tab-review\']\').trigger(\'click\'); return false;">0 Avis</a>	
+													';
+
+														//	<a class="reviews_button" href="quickview.php.html" onclick="$(\'a[href=\'#tab-review\']\').trigger(\'click\'); return false;">0 Avis</a>	
+
+													echo'
 												</div>
 			   
 												<div class="product-label form-group">
@@ -198,7 +202,7 @@
 
 
 
-												if($quickview_product_description['eg_produit_disponibilite'] == 0){
+												if($quickview_product_description['eg_produit_dispo'] == 0){
 
 													echo'
 
@@ -207,7 +211,7 @@
 											';
 
 
-												}elseif($quickview_product_description['eg_produit_disponibilite'] == 1){
+												}elseif($quickview_product_description['eg_produit_dispo'] == 1){
 
 													echo'
 													
@@ -215,19 +219,19 @@
 
 													';
 
-												}elseif($quickview_product_description['eg_produit_disponibilite'] == 2){
-	
+												}elseif($quickview_product_description['eg_produit_dispo'] == 2){
+
 													echo'
 													
 													<div class="stock"><span class="status-commande">Sur commande 48H</span></div>
 
 													';
 
-												}elseif($quickview_product_description['eg_produit_disponibilite'] == 3){
-	
+												}else{
+
 													echo'
 													
-													<div class="stock"><span class="status-commande">Sur commande 48H</span></div>
+													<div class="stock"><span class="status-commande">Sur commande</span></div>
 
 													';
 
@@ -384,7 +388,7 @@
 						<div class="tabsslider  vertical-tabs col-xs-12">
 							<ul class="nav nav-tabs col-lg-2 col-sm-3">
 								<li class="active"><a data-toggle="tab" href="#tab-1">Description</a></li>
-								<li class="item_nonactive"><a data-toggle="tab" href="#tab-review">Avis (1)</a></li>
+								<!-- <li class="item_nonactive"><a data-toggle="tab" href="#tab-review">Avis (1)</a></li> -->
 								<!-- <li class="item_nonactive"><a data-toggle="tab" href="#tab-4">Tags</a></li> -->
 								<!-- <li class="item_nonactive"><a data-toggle="tab" href="#tab-5">Custom Tab</a></li> -->
 							</ul>
@@ -569,6 +573,29 @@
 
 
 																';
+																
+
+																if($produits_lies['eg_produit_promo'] > 0){
+
+																	echo '
+																	<span class="label label-sale">Promotion</span>
+																	';
+																}	
+
+																if($produits_lies['eg_produit_new'] == 1){
+
+																	echo '
+																	<span class="label label-new">Nouveau</span>
+																	';
+																}
+
+																if($produits_lies['eg_produit_promo'] > 0 & $produits_lies['eg_produit_new'] == 1){
+
+																	echo '
+																	<span class="label label-new">Nouveau</span>
+																	<span class="label label-sale">Promotion</span>
+																	';
+																}	
 
 															}
 														$PDO_query_produits_lies_img->closeCursor();
@@ -578,6 +605,7 @@
 														</div>
 														<!--Sale Label-->
 														';
+														
 
 															if($produits_lies['eg_produit_promo'] > 0){
 
@@ -597,28 +625,59 @@
 													
 														<div class="caption">
 															<h4><a href="http://'.$_SERVER['SERVER_NAME'].'/ExpertGaming/pages/product_view.php?produit_id='.$produits_lies['eg_produit_id'].'">' . $produits_lies['eg_produit_nom'] . '</a></h4>
+															<h5>Référence: ' . $produits_lies['eg_produit_reference'] . '</h5>  
 															<div class="ratings">
-																<div class="rating-box">
-																	<span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i>
-																		<i class="fa fa-star-o fa-stack-1x"></i>
-																	</span>
-																	<span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i>
-																		<i class="fa fa-star-o fa-stack-1x"></i>
-																	</span>
-																	<span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i>
-																		<i class="fa fa-star-o fa-stack-1x"></i>
-																	</span>
-																	<span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i>
-																		<i class="fa fa-star-o fa-stack-1x"></i>
-																	</span>
-																	<span class="fa fa-stack">
-																		<i class="fa fa-star-o fa-stack-1x"></i>
-																	</span>
+																<div class="box-review form-group">
+																	<div class="ratings">
+																		<div class="rating-box">';
+																			$nb_etoile = $produits_lies['eg_produit_etoiles'];
+																			for ($i=1 ; $i<=$nb_etoile ; $i++)
+																			{
+																			echo '<span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star-o fa-stack-1x"></i></span> ';
+																			}
+																			if($produits_lies['eg_produit_dispo'] == 0){
+
+																				echo'
+			
+																					<div class="stock"><span class="status-outofstock">Hors stock</span></div>
+			
+																				';
+			
+			
+																			}elseif($produits_lies['eg_produit_dispo'] == 1){
+			
+																				echo'
+																				
+																					<div class="stock"><span class="status-stock">Disponible</span></div>
+			
+																				';
+			
+																			}elseif($produits_lies['eg_produit_dispo'] == 2){
+				
+																				echo'
+																				
+																					<div class="stock"><span class="status-commande">Sur commande 48H</span></div>
+							
+																				';
+							
+																			}else{
+							
+																				echo'
+																				
+																					<div class="stock"><span class="status-commande">Sur commande</span></div>
+							
+																				';
+							
+																			}
+																			echo'
+																		</div>
+																	</div>
 																</div>
 															</div>
 				
 															<div class="price">
 															';
+															
 
 															if($produits_lies['eg_produit_promo'] > 0){
 

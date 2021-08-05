@@ -2129,14 +2129,14 @@
 																		';
 																	}	
 
-																	if($produits['eg_produit_date'] >= '2021-06-04'){
+																	if($produits['eg_produit_new'] == 1){
 
 																		echo '
 																		<span class="label label-new">Nouveau</span>
 																		';
 																	}
 
-																	if($produits['eg_produit_promo'] > 0 & $produits['eg_produit_date'] >= '2021-06-04'){
+																	if($produits['eg_produit_promo'] > 0 & $produits['eg_produit_new'] == 1){
 
 																		echo '
 																		<span class="label label-new">Nouveau</span>
@@ -2196,16 +2196,16 @@
 
 																	echo'
 
-																	<div class="stock"><span class="status-outofstock">Hors stock</span></div>
+																		<div class="stock"><span class="status-outofstock">Hors stock</span></div>
 
-															';
+																	';
 
 
 																}elseif($produits['eg_produit_dispo'] == 1){
 
 																	echo'
 																	
-																	<div class="stock"><span class="status-stock">Disponible</span></div>
+																		<div class="stock"><span class="status-stock">Disponible</span></div>
 
 																	';
 
@@ -2213,7 +2213,7 @@
 	
 																	echo'
 																	
-																	<div class="stock"><span class="status-commande">Sur commande 48H</span></div>
+																		<div class="stock"><span class="status-commande">Sur commande 48H</span></div>
 				
 																	';
 				
@@ -2221,7 +2221,7 @@
 				
 																	echo'
 																	
-																	<div class="stock"><span class="status-commande">Sur commande 72H</span></div>
+																		<div class="stock"><span class="status-commande">Sur commande</span></div>
 				
 																	';
 				
