@@ -38,11 +38,11 @@
 				
 				<!-- Search -->
 				<div id="sosearchpro" class="col-md-7 col-sm-7 search-pro">
-					<form method="GET" action="index.html">
+					<form method="POST" action="//<?php echo $_SERVER['SERVER_NAME']?>/ExpertGaming/pages/products.php">
 						<div id="search0" class="search input-group">
 							<div class="select_category filter_type icon-select">
-								<select class="no-border" name="category_id">
-									<option value="0">Toutes les catégories</option>
+								<select class="no-border" name="categorieid">
+									<option value="">Toutes les catégories</option>
 									
 										<?php
 
@@ -54,7 +54,7 @@
 
 												echo '
 
-													<option value="0">' . $categorie['eg_categorie_nom'] . '</option>
+													<option value="' . $categorie['eg_categorie_id'] . '">' . $categorie['eg_categorie_nom'] . '</option>
 
 												';
 
@@ -69,7 +69,7 @@
 
 														echo '
 		
-															<option value="0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' . $sous_categorie['eg_sous_categorie_nom'] . '</option>
+															<option value="' . $sous_categorie['eg_sous_categorie_id'] . '">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' . $sous_categorie['eg_sous_categorie_nom'] . '</option>
 		
 														';
 													}
@@ -83,12 +83,11 @@
 								</select>
 							</div>
 
-							<input class="autosearch-input form-control" type="text" value="" size="50" autocomplete="off" placeholder="Saisissez des mots clés à rechercher ..." name="search">
+							<input class="autosearch-input form-control" type="text" value="" size="50" autocomplete="off" placeholder="Saisissez des mots clés à rechercher ..." name="recherche">
 							<span class="input-group-btn">
 							<button type="submit" class="button-search btn btn-primary" name="submit_search"><i class="fa fa-search"></i></button>
 							</span>
 						</div>
-						<input type="hidden" name="route" value="product/search">
 					</form>
 				</div>
 				<!-- //Search -->
