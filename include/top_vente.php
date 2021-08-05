@@ -79,16 +79,16 @@
 											</div>
 													';
 
-													if($produit_top_vente['eg_produit_disponibilite'] == 0){
+													if($produit_top_vente['eg_produit_dispo'] == 0){
 
 														echo'
 	
 														<div class="stock"><span class="status-outofstock">Hors stock</span></div>
 	
-														';
+												';
 	
 	
-													}elseif($produit_top_vente['eg_produit_disponibilite'] == 1){
+													}elseif($produit_top_vente['eg_produit_dispo'] == 1){
 	
 														echo'
 														
@@ -96,7 +96,7 @@
 	
 														';
 	
-													}elseif($produit_top_vente['eg_produit_disponibilite'] == 2){
+													}elseif($produit_top_vente['eg_produit_dispo'] == 2){
 	
 														echo'
 														
@@ -108,7 +108,7 @@
 	
 														echo'
 														
-														<div class="stock"><span class="status-commande">Sur commande 72H</span></div>
+														<div class="stock"><span class="status-commande">Sur commande</span></div>
 	
 														';
 	

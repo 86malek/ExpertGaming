@@ -2123,19 +2123,12 @@
 																';
 																
 
-																	if($produits['eg_produit_date'] >= '2021-06-04'){
+																	if($produits['eg_produit_new'] == 1){
 
 																		echo '
 																		<span class="label label-new">Nouveau</span>
 																		';
 																	}
-
-																	if($produits['eg_produit_date'] >= '2021-06-04'){
-
-																		echo '
-																		<span class="label label-new">Nouveau</span>
-																		';
-																	}	
 
 																echo'
 																		<!--full quick view block-->
@@ -2214,7 +2207,7 @@
 				
 																	echo'
 																	
-																	<div class="stock"><span class="status-commande">Sur commande 72H</span></div>
+																	<div class="stock"><span class="status-commande">Sur commande</span></div>
 				
 																	';
 				
