@@ -95,7 +95,7 @@
 								<ul class="contact-address">
 									<li><span class="fas fa-map-pin"></span> Menzah 6, galerie le Colisée 8<sup>éme</sup> boutique à droite, En face de la Clinique Farabi</li>
 									<li><span class="fas fa-envelope"></span> <a href="mailto:contact@expert-gaming.tn">contact@expert-gaming.tn</a></li>
-									<li><span class="fas fa-phone">&nbsp;</span> Tel 1 : 58 554 255<br>Tel 2 : 28 516 916</li>
+									<li><span class="fas fa-phone">&nbsp;</span> Téléphone 1 : 58 554 255<br>Téléphone 2 : 28 516 916</li>
 								</ul>
 							</div>
 						</div>
