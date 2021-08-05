@@ -1,8 +1,11 @@
 <?php
 echo
-	$_POST['recherche'];
-	$_POST['categorieid'];
+	$_POST['recherche']
 ;
+echo
+	$_POST['categorieid']
+;
+
     include("../config/fonction.php");
 
 		if(isset($_GET['menu_id'])){
@@ -705,8 +708,6 @@ echo
 						<!-- //end Pagination -->
 						<!--changed listings-->
 						<div class="products-list row grid">
-
-
 
 
 
