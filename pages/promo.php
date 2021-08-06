@@ -36,7 +36,7 @@
 		$PDO_query_nbProduits->closeCursor();
 
 		// On détermine le nombre d'articles par page
-		$parPage = 21;
+		$parPage = 9;
 
 		// On calcule le nombre de pages total
 		$pages = ceil($nbProduits / $parPage);
@@ -711,7 +711,6 @@
 								// Filters de A à Z et de Z à A
 
 								if(!isset($_GET['menu_id']) && !isset($_GET['cat_id']) && !isset($_GET['sous_cat_id']) && !isset($_GET['marque_id']) && !isset($_GET['asc_nom']) && !isset($_GET['desc_nom']) && !isset($_GET['asc_prix']) && !isset($_GET['desc_prix'])){
-									echo'0';
 
 											$PDO_query_nbProduits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_promo > 0 ORDER BY eg_produit_prix ASC");
 											$PDO_query_nbProduits->execute();
@@ -719,7 +718,7 @@
 											$PDO_query_nbProduits->closeCursor();
 									
 											// On détermine le nombre d'articles par page
-											$parPage = 21;
+											$parPage = 9;
 									
 											// On calcule le nombre de pages total
 											$pages = ceil($nbProduits / $parPage);
@@ -732,7 +731,6 @@
 									$PDO_query_listes_produits->bindParam(":parpage", $parPage, PDO::PARAM_INT);
 					
 								}elseif(!isset($_GET['marque_id']) && !isset($_GET['cat_id']) && !isset($_GET['sous_cat_id']) && isset($_GET['menu_id']) && !isset($_GET['asc_nom']) && !isset($_GET['desc_nom']) && !isset($_GET['asc_prix']) && !isset($_GET['desc_prix'])){
-										echo'prix 1';
 
 											$PDO_query_nbProduits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_promo > 0 AND eg_menu_id = :eg_menu_id ORDER BY eg_produit_prix ASC");
 											$PDO_query_nbProduits->bindParam(":eg_menu_id", $menu_id, PDO::PARAM_INT);
@@ -741,7 +739,7 @@
 											$PDO_query_nbProduits->closeCursor();
 									
 											// On détermine le nombre d'articles par page
-											$parPage = 21;
+											$parPage = 9;
 									
 											// On calcule le nombre de pages total
 											$pages = ceil($nbProduits / $parPage);
@@ -755,7 +753,6 @@
 									$PDO_query_listes_produits->bindParam(":eg_menu_id", $menu_id, PDO::PARAM_INT);
 					
 								}elseif(isset($_GET['marque_id']) && isset($_GET['menu_id']) && !isset($_GET['cat_id']) && !isset($_GET['sous_cat_id']) && !isset($_GET['asc_nom']) && !isset($_GET['desc_nom']) && !isset($_GET['asc_prix']) && !isset($_GET['desc_prix'])){
-									echo'prix 2';
 
 											$PDO_query_nbProduits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_promo > 0 AND eg_marque_id = :eg_marque_id AND eg_menu_id = :eg_menu_id ORDER BY eg_produit_prix ASC");
 											$PDO_query_nbProduits->bindParam(":eg_menu_id", $menu_id, PDO::PARAM_INT);
@@ -765,7 +762,7 @@
 											$PDO_query_nbProduits->closeCursor();
 									
 											// On détermine le nombre d'articles par page
-											$parPage = 21;
+											$parPage = 9;
 									
 											// On calcule le nombre de pages total
 											$pages = ceil($nbProduits / $parPage);
@@ -780,7 +777,6 @@
 									$PDO_query_listes_produits->bindParam(":eg_marque_id", $marque_id, PDO::PARAM_INT);
 					
 								}elseif(!isset($_GET['marque_id']) && isset($_GET['menu_id']) && !isset($_GET['cat_id']) && !isset($_GET['sous_cat_id']) && isset($_GET['asc_nom']) && !isset($_GET['desc_nom']) && !isset($_GET['asc_prix']) && !isset($_GET['desc_prix'])){
-									echo'prix 3';
 
 											$PDO_query_nbProduits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_promo > 0 AND eg_menu_id = :eg_menu_id ORDER BY eg_produit_nom ASC");
 											$PDO_query_nbProduits->bindParam(":eg_menu_id", $menu_id, PDO::PARAM_INT);
@@ -789,7 +785,7 @@
 											$PDO_query_nbProduits->closeCursor();
 									
 											// On détermine le nombre d'articles par page
-											$parPage = 21;
+											$parPage = 9;
 									
 											// On calcule le nombre de pages total
 											$pages = ceil($nbProduits / $parPage);
@@ -803,7 +799,6 @@
 									$PDO_query_listes_produits->bindParam(":eg_menu_id", $menu_id, PDO::PARAM_INT);
 					
 								}elseif(!isset($_GET['marque_id']) && isset($_GET['menu_id']) && !isset($_GET['cat_id']) && !isset($_GET['sous_cat_id']) && !isset($_GET['asc_nom']) && !isset($_GET['desc_nom']) && isset($_GET['asc_prix']) && !isset($_GET['desc_prix'])){
-									echo'prix 3.1';
 
 											$PDO_query_nbProduits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_promo > 0 AND eg_menu_id = :eg_menu_id ORDER BY eg_produit_prix ASC");
 											$PDO_query_nbProduits->bindParam(":eg_menu_id", $menu_id, PDO::PARAM_INT);
@@ -812,7 +807,7 @@
 											$PDO_query_nbProduits->closeCursor();
 									
 											// On détermine le nombre d'articles par page
-											$parPage = 21;
+											$parPage = 9;
 									
 											// On calcule le nombre de pages total
 											$pages = ceil($nbProduits / $parPage);
@@ -826,7 +821,6 @@
 									$PDO_query_listes_produits->bindParam(":eg_menu_id", $menu_id, PDO::PARAM_INT);
 					
 								}elseif(isset($_GET['marque_id']) && !isset($_GET['cat_id']) && !isset($_GET['sous_cat_id']) && !isset($_GET['menu_id']) && isset($_GET['asc_nom']) && !isset($_GET['desc_nom']) && !isset($_GET['asc_prix']) && !isset($_GET['desc_prix'])){
-									echo'prix 4';	
 									
 											$PDO_query_nbProduits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_promo > 0 AND eg_marque_id = :eg_marque_id ORDER BY eg_produit_nom ASC");
 											$PDO_query_nbProduits->bindParam(":eg_marque_id", $marque_id, PDO::PARAM_INT);
@@ -835,7 +829,7 @@
 											$PDO_query_nbProduits->closeCursor();
 
 											// On détermine le nombre d'articles par page
-											$parPage = 21;
+											$parPage = 9;
 
 											// On calcule le nombre de pages total
 											$pages = ceil($nbProduits / $parPage);
@@ -849,7 +843,6 @@
 									$PDO_query_listes_produits->bindParam(":eg_marque_id", $marque_id, PDO::PARAM_INT);
 					
 								}elseif(isset($_GET['marque_id']) && !isset($_GET['cat_id']) && !isset($_GET['sous_cat_id']) && !isset($_GET['menu_id']) && !isset($_GET['asc_nom']) && !isset($_GET['desc_nom']) && isset($_GET['asc_prix']) && !isset($_GET['desc_prix'])){
-									echo'prix 4.1';			
 											$PDO_query_nbProduits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_promo > 0 AND eg_marque_id = :eg_marque_id ORDER BY eg_produit_prix ASC");
 											$PDO_query_nbProduits->bindParam(":eg_marque_id", $marque_id, PDO::PARAM_INT);
 											$PDO_query_nbProduits->execute();
@@ -857,7 +850,7 @@
 											$PDO_query_nbProduits->closeCursor();
 
 											// On détermine le nombre d'articles par page
-											$parPage = 21;
+											$parPage = 9;
 
 											// On calcule le nombre de pages total
 											$pages = ceil($nbProduits / $parPage);
@@ -872,7 +865,6 @@
 									$PDO_query_listes_produits->bindParam(":eg_marque_id", $marque_id, PDO::PARAM_INT);
 					
 								}elseif(isset($_GET['marque_id']) && !isset($_GET['cat_id']) && !isset($_GET['sous_cat_id']) && !isset($_GET['menu_id']) && !isset($_GET['asc_nom']) && !isset($_GET['desc_nom']) && !isset($_GET['asc_prix']) && !isset($_GET['desc_prix'])){
-									echo'prix 5';	
 									
 											$PDO_query_nbProduits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_promo > 0 AND eg_marque_id = :eg_marque_id ORDER BY eg_produit_prix ASC");
 											$PDO_query_nbProduits->bindParam(":eg_marque_id", $marque_id, PDO::PARAM_INT);
@@ -881,7 +873,7 @@
 											$PDO_query_nbProduits->closeCursor();
 											
 											// On détermine le nombre d'articles par page
-											$parPage = 21;
+											$parPage = 9;
 											
 											// On calcule le nombre de pages total
 											$pages = ceil($nbProduits / $parPage);
@@ -895,7 +887,6 @@
 									$PDO_query_listes_produits->bindParam(":eg_marque_id", $marque_id, PDO::PARAM_INT);
 					
 								}elseif(isset($_GET['marque_id']) && isset($_GET['menu_id']) && !isset($_GET['sous_cat_id']) && !isset($_GET['cat_id']) && isset($_GET['asc_nom']) && !isset($_GET['desc_nom']) && !isset($_GET['asc_prix']) && !isset($_GET['desc_prix'])){
-									echo'prix 6';
 
 											$PDO_query_nbProduits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_promo > 0 AND eg_marque_id = :eg_marque_id AND eg_menu_id = :eg_menu_id ORDER BY eg_produit_nom ASC");
 											$PDO_query_nbProduits->bindParam(":eg_menu_id", $menu_id, PDO::PARAM_INT);
@@ -905,7 +896,7 @@
 											$PDO_query_nbProduits->closeCursor();
 											
 											// On détermine le nombre d'articles par page
-											$parPage = 21;
+											$parPage = 9;
 											
 											// On calcule le nombre de pages total
 											$pages = ceil($nbProduits / $parPage);
@@ -920,7 +911,6 @@
 									$PDO_query_listes_produits->bindParam(":eg_marque_id", $marque_id, PDO::PARAM_INT);
 					
 								}elseif(isset($_GET['marque_id']) && isset($_GET['menu_id']) && !isset($_GET['sous_cat_id']) && !isset($_GET['cat_id']) && !isset($_GET['asc_nom']) && !isset($_GET['desc_nom']) && isset($_GET['asc_prix']) && !isset($_GET['desc_prix'])){
-									echo'prix 6.1';
 
 											$PDO_query_nbProduits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_promo > 0 AND eg_marque_id = :eg_marque_id AND eg_menu_id = :eg_menu_id ORDER BY eg_produit_prix ASC");
 											$PDO_query_nbProduits->bindParam(":eg_menu_id", $menu_id, PDO::PARAM_INT);
@@ -930,7 +920,7 @@
 											$PDO_query_nbProduits->closeCursor();
 											
 											// On détermine le nombre d'articles par page
-											$parPage = 21;
+											$parPage = 9;
 											
 											// On calcule le nombre de pages total
 											$pages = ceil($nbProduits / $parPage);
@@ -945,7 +935,6 @@
 									$PDO_query_listes_produits->bindParam(":eg_marque_id", $marque_id, PDO::PARAM_INT);
 					
 								}elseif(!isset($_GET['marque_id']) && isset($_GET['cat_id']) && !isset($_GET['menu_id']) && !isset($_GET['sous_cat_id']) && !isset($_GET['asc_nom']) && !isset($_GET['desc_nom']) && !isset($_GET['asc_prix']) && !isset($_GET['desc_prix'])){
-									echo'prix 7';
 
 											$PDO_query_nbProduits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_promo > 0 AND eg_categorie_id = :eg_categorie_id ORDER BY eg_produit_prix ASC");
 											$PDO_query_nbProduits->bindParam(":eg_categorie_id", $cat_id, PDO::PARAM_INT);
@@ -954,7 +943,7 @@
 											$PDO_query_nbProduits->closeCursor();
 											
 											// On détermine le nombre d'articles par page
-											$parPage = 21;
+											$parPage = 9;
 											
 											// On calcule le nombre de pages total
 											$pages = ceil($nbProduits / $parPage);
@@ -968,7 +957,6 @@
 									$PDO_query_listes_produits->bindParam(":eg_categorie_id", $cat_id, PDO::PARAM_INT);
 					
 								}elseif(isset($_GET['marque_id']) && !isset($_GET['cat_id']) && !isset($_GET['menu_id']) && !isset($_GET['sous_cat_id']) && !isset($_GET['asc_nom']) && !isset($_GET['desc_nom']) && !isset($_GET['asc_prix']) && !isset($_GET['desc_prix'])){
-									echo'prix 8';
 
 											$PDO_query_nbProduits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_promo > 0 AND eg_marque_id = :eg_marque_id ORDER BY eg_produit_prix ASC");
 											$PDO_query_nbProduits->bindParam(":eg_marque_id", $marque_id, PDO::PARAM_INT);
@@ -977,7 +965,7 @@
 											$PDO_query_nbProduits->closeCursor();
 											
 											// On détermine le nombre d'articles par page
-											$parPage = 21;
+											$parPage = 9;
 											
 											// On calcule le nombre de pages total
 											$pages = ceil($nbProduits / $parPage);
@@ -991,7 +979,6 @@
 									$PDO_query_listes_produits->bindParam(":eg_marque_id", $marque_id, PDO::PARAM_INT);
 					
 								}elseif(!isset($_GET['marque_id']) && isset($_GET['cat_id']) && !isset($_GET['menu_id']) && !isset($_GET['sous_cat_id']) && isset($_GET['asc_nom']) && !isset($_GET['desc_nom']) && !isset($_GET['asc_prix']) && !isset($_GET['desc_prix'])){
-									echo'prix 9';
 
 											$PDO_query_nbProduits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_promo > 0 AND eg_categorie_id = :eg_categorie_id ORDER BY eg_produit_nom ASC");
 											$PDO_query_nbProduits->bindParam(":eg_categorie_id", $cat_id, PDO::PARAM_INT);
@@ -1000,7 +987,7 @@
 											$PDO_query_nbProduits->closeCursor();
 											
 											// On détermine le nombre d'articles par page
-											$parPage = 21;
+											$parPage = 9;
 											
 											// On calcule le nombre de pages total
 											$pages = ceil($nbProduits / $parPage);
@@ -1014,7 +1001,6 @@
 									$PDO_query_listes_produits->bindParam(":eg_categorie_id", $cat_id, PDO::PARAM_INT);
 					
 								}elseif(!isset($_GET['marque_id']) && isset($_GET['cat_id']) && !isset($_GET['menu_id']) && !isset($_GET['sous_cat_id']) && !isset($_GET['asc_nom']) && !isset($_GET['desc_nom']) && isset($_GET['asc_prix']) && !isset($_GET['desc_prix'])){
-									echo'prix 9.1';
 
 											$PDO_query_nbProduits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_promo > 0 AND eg_categorie_id = :eg_categorie_id ORDER BY eg_produit_prix ASC");
 											$PDO_query_nbProduits->bindParam(":eg_categorie_id", $cat_id, PDO::PARAM_INT);
@@ -1023,7 +1009,7 @@
 											$PDO_query_nbProduits->closeCursor();
 											
 											// On détermine le nombre d'articles par page
-											$parPage = 21;
+											$parPage = 9;
 											
 											// On calcule le nombre de pages total
 											$pages = ceil($nbProduits / $parPage);
@@ -1037,7 +1023,6 @@
 									$PDO_query_listes_produits->bindParam(":eg_categorie_id", $cat_id, PDO::PARAM_INT);
 					
 								}elseif(isset($_GET['marque_id']) && !isset($_GET['menu_id']) && !isset($_GET['sous_cat_id']) && !isset($_GET['cat_id']) && isset($_GET['asc_nom']) && !isset($_GET['desc_nom']) && !isset($_GET['asc_prix']) && !isset($_GET['desc_prix'])){
-									echo'prix 10';			
 
 											$PDO_query_nbProduits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_promo > 0 AND eg_marque_id = :eg_marque_id ORDER BY eg_produit_nom ASC");
 											$PDO_query_nbProduits->bindParam(":eg_marque_id", $marque_id, PDO::PARAM_INT);
@@ -1046,7 +1031,7 @@
 											$PDO_query_nbProduits->closeCursor();
 											
 											// On détermine le nombre d'articles par page
-											$parPage = 21;
+											$parPage = 9;
 											
 											// On calcule le nombre de pages total
 											$pages = ceil($nbProduits / $parPage);
@@ -1060,7 +1045,6 @@
 									$PDO_query_listes_produits->bindParam(":eg_marque_id", $marque_id, PDO::PARAM_INT);
 					
 								}elseif(isset($_GET['marque_id']) && !isset($_GET['menu_id']) && !isset($_GET['sous_cat_id']) && !isset($_GET['cat_id']) && !isset($_GET['asc_nom']) && !isset($_GET['desc_nom']) && isset($_GET['asc_prix']) && !isset($_GET['desc_prix'])){
-									echo'prix 10.1';		
 									
 											$PDO_query_nbProduits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_promo > 0 AND eg_marque_id = :eg_marque_id ORDER BY eg_produit_prix ASC");
 											$PDO_query_nbProduits->bindParam(":eg_marque_id", $marque_id, PDO::PARAM_INT);
@@ -1069,7 +1053,7 @@
 											$PDO_query_nbProduits->closeCursor();
 
 											// On détermine le nombre d'articles par page
-											$parPage = 21;
+											$parPage = 9;
 
 											// On calcule le nombre de pages total
 											$pages = ceil($nbProduits / $parPage);
@@ -1083,7 +1067,6 @@
 									$PDO_query_listes_produits->bindParam(":eg_marque_id", $marque_id, PDO::PARAM_INT);
 					
 								}elseif(isset($_GET['marque_id']) && isset($_GET['cat_id']) && !isset($_GET['menu_id']) && !isset($_GET['sous_cat_id']) && isset($_GET['asc_nom']) && !isset($_GET['desc_nom']) && !isset($_GET['asc_prix']) && !isset($_GET['desc_prix'])){
-									echo'prix 11';
 
 											$PDO_query_nbProduits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_promo > 0 AND eg_marque_id = :eg_marque_id AND eg_categorie_id = :eg_categorie_id ORDER BY eg_produit_nom ASC");
 											$PDO_query_nbProduits->bindParam(":eg_categorie_id", $cat_id, PDO::PARAM_INT);
@@ -1093,7 +1076,7 @@
 											$PDO_query_nbProduits->closeCursor();
 											
 											// On détermine le nombre d'articles par page
-											$parPage = 21;
+											$parPage = 9;
 											
 											// On calcule le nombre de pages total
 											$pages = ceil($nbProduits / $parPage);
@@ -1108,14 +1091,13 @@
 									$PDO_query_listes_produits->bindParam(":eg_marque_id", $marque_id, PDO::PARAM_INT);
 					
 								}elseif(isset($_GET['marque_id']) && isset($_GET['cat_id']) && !isset($_GET['menu_id']) && !isset($_GET['sous_cat_id']) && !isset($_GET['asc_nom']) && !isset($_GET['desc_nom']) && isset($_GET['asc_prix']) && !isset($_GET['desc_prix'])){
-									echo'prix 11.1';
 									$PDO_query_nbProduits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_promo > 0 ORDER BY eg_produit_prix ASC");
 									$PDO_query_nbProduits->execute();
 									$nbProduits = $PDO_query_nbProduits->rowCount();
 									$PDO_query_nbProduits->closeCursor();
 							
 									// On détermine le nombre d'articles par page
-									$parPage = 21;
+									$parPage = 9;
 							
 									// On calcule le nombre de pages total
 									$pages = ceil($nbProduits / $parPage);
@@ -1130,7 +1112,6 @@
 									$PDO_query_listes_produits->bindParam(":eg_marque_id", $marque_id, PDO::PARAM_INT);
 					
 								}elseif(!isset($_GET['marque_id']) && isset($_GET['sous_cat_id']) && !isset($_GET['cat_id']) && !isset($_GET['menu_id']) && !isset($_GET['asc_nom']) && !isset($_GET['desc_nom']) && !isset($_GET['asc_prix']) && !isset($_GET['desc_prix'])){
-									echo'prix 12';
 
 										$PDO_query_nbProduits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_promo > 0 AND eg_sous_categorie_id = :eg_sous_categorie_id ORDER BY eg_produit_prix ASC");
 										$PDO_query_nbProduits->bindParam(":eg_sous_categorie_id", $sous_cat_id, PDO::PARAM_INT);
@@ -1139,7 +1120,7 @@
 										$PDO_query_nbProduits->closeCursor();
 
 										// On détermine le nombre d'articles par page
-										$parPage = 21;
+										$parPage = 9;
 
 										// On calcule le nombre de pages total
 										$pages = ceil($nbProduits / $parPage);
@@ -1153,7 +1134,6 @@
 									$PDO_query_listes_produits->bindParam(":eg_sous_categorie_id", $sous_cat_id, PDO::PARAM_INT);
 					
 								}elseif(isset($_GET['marque_id']) && !isset($_GET['sous_cat_id']) && !isset($_GET['cat_id']) && !isset($_GET['menu_id']) && !isset($_GET['asc_nom']) && !isset($_GET['desc_nom']) && !isset($_GET['asc_prix']) && !isset($_GET['desc_prix'])){
-									echo'prix 13';
 
 											$PDO_query_nbProduits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_promo > 0 AND eg_marque_id = :eg_marque_id ORDER BY eg_produit_prix ASC");
 											$PDO_query_nbProduits->bindParam(":eg_marque_id", $marque_id, PDO::PARAM_INT);
@@ -1162,7 +1142,7 @@
 											$PDO_query_nbProduits->closeCursor();
 											
 											// On détermine le nombre d'articles par page
-											$parPage = 21;
+											$parPage = 9;
 											
 											// On calcule le nombre de pages total
 											$pages = ceil($nbProduits / $parPage);
@@ -1176,7 +1156,6 @@
 									$PDO_query_listes_produits->bindParam(":eg_marque_id", $marque_id, PDO::PARAM_INT);
 					
 								}elseif(isset($_GET['marque_id']) && isset($_GET['sous_cat_id']) && !isset($_GET['cat_id']) && !isset($_GET['menu_id']) && !isset($_GET['asc_nom']) && !isset($_GET['desc_nom']) && !isset($_GET['asc_prix']) && !isset($_GET['desc_prix'])){
-									echo'prix 14';
 
 											$PDO_query_nbProduits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_promo > 0 AND eg_marque_id = :eg_marque_id AND eg_sous_categorie_id = :eg_sous_categorie_id ORDER BY eg_produit_prix ASC");
 											$PDO_query_nbProduits->bindParam(":eg_sous_categorie_id", $sous_cat_id, PDO::PARAM_INT);
@@ -1186,7 +1165,7 @@
 											$PDO_query_nbProduits->closeCursor();
 											
 											// On détermine le nombre d'articles par page
-											$parPage = 21;
+											$parPage = 9;
 											
 											// On calcule le nombre de pages total
 											$pages = ceil($nbProduits / $parPage);
@@ -1201,7 +1180,6 @@
 									$PDO_query_listes_produits->bindParam(":eg_marque_id", $marque_id, PDO::PARAM_INT);
 					
 								}elseif(!isset($_GET['marque_id']) && isset($_GET['sous_cat_id']) && !isset($_GET['cat_id']) && !isset($_GET['menu_id']) && isset($_GET['asc_nom']) && !isset($_GET['desc_nom']) && !isset($_GET['asc_prix']) && !isset($_GET['desc_prix'])){
-									echo'prix 15';
 
 											$PDO_query_nbProduits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_promo > 0 AND eg_sous_categorie_id = :eg_sous_categorie_id ORDER BY eg_produit_nom ASC");
 											$PDO_query_nbProduits->bindParam(":eg_sous_categorie_id", $sous_cat_id, PDO::PARAM_INT);
@@ -1210,7 +1188,7 @@
 											$PDO_query_nbProduits->closeCursor();
 											
 											// On détermine le nombre d'articles par page
-											$parPage = 21;
+											$parPage = 9;
 											
 											// On calcule le nombre de pages total
 											$pages = ceil($nbProduits / $parPage);
@@ -1224,7 +1202,6 @@
 									$PDO_query_listes_produits->bindParam(":eg_sous_categorie_id", $sous_cat_id, PDO::PARAM_INT);
 					
 								}elseif(!isset($_GET['marque_id']) && isset($_GET['sous_cat_id']) && !isset($_GET['cat_id']) && !isset($_GET['menu_id']) && !isset($_GET['asc_nom']) && !isset($_GET['desc_nom']) && isset($_GET['asc_prix']) && !isset($_GET['desc_prix'])){
-									echo'prix 15.1';
 
 											$PDO_query_nbProduits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_promo > 0 AND eg_sous_categorie_id = :eg_sous_categorie_id ORDER BY eg_produit_prix ASC");
 											$PDO_query_nbProduits->bindParam(":eg_sous_categorie_id", $sous_cat_id, PDO::PARAM_INT);
@@ -1233,7 +1210,7 @@
 											$PDO_query_nbProduits->closeCursor();
 											
 											// On détermine le nombre d'articles par page
-											$parPage = 21;
+											$parPage = 9;
 											
 											// On calcule le nombre de pages total
 											$pages = ceil($nbProduits / $parPage);
@@ -1247,7 +1224,6 @@
 									$PDO_query_listes_produits->bindParam(":eg_sous_categorie_id", $sous_cat_id, PDO::PARAM_INT);
 					
 								}elseif(isset($_GET['marque_id']) && !isset($_GET['sous_cat_id']) && !isset($_GET['cat_id']) && !isset($_GET['menu_id']) && isset($_GET['asc_nom']) && !isset($_GET['desc_nom']) && !isset($_GET['asc_prix']) && !isset($_GET['desc_prix'])){
-									echo'prix 16';
 
 											$PDO_query_nbProduits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_promo > 0 AND eg_marque_id = :eg_marque_id ORDER BY eg_produit_nom ASC");
 											$PDO_query_nbProduits->bindParam(":eg_marque_id", $marque_id, PDO::PARAM_INT);
@@ -1256,7 +1232,7 @@
 											$PDO_query_nbProduits->closeCursor();
 											
 											// On détermine le nombre d'articles par page
-											$parPage = 21;
+											$parPage = 9;
 											
 											// On calcule le nombre de pages total
 											$pages = ceil($nbProduits / $parPage);
@@ -1270,7 +1246,6 @@
 									$PDO_query_listes_produits->bindParam(":eg_marque_id", $marque_id, PDO::PARAM_INT);
 					
 								}elseif(isset($_GET['marque_id']) && !isset($_GET['sous_cat_id']) && !isset($_GET['cat_id']) && !isset($_GET['menu_id']) && !isset($_GET['asc_nom']) && !isset($_GET['desc_nom']) && isset($_GET['asc_prix']) && !isset($_GET['desc_prix'])){
-									echo'prix 16.1';
 
 											$PDO_query_nbProduits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_promo > 0 AND eg_marque_id = :eg_marque_id ORDER BY eg_produit_prix ASC");
 											$PDO_query_nbProduits->bindParam(":eg_marque_id", $marque_id, PDO::PARAM_INT);
@@ -1279,7 +1254,7 @@
 											$PDO_query_nbProduits->closeCursor();
 											
 											// On détermine le nombre d'articles par page
-											$parPage = 21;
+											$parPage = 9;
 											
 											// On calcule le nombre de pages total
 											$pages = ceil($nbProduits / $parPage);
@@ -1293,7 +1268,6 @@
 									$PDO_query_listes_produits->bindParam(":eg_marque_id", $marque_id, PDO::PARAM_INT);
 					
 								}elseif(isset($_GET['marque_id']) && isset($_GET['sous_cat_id']) && !isset($_GET['cat_id']) && !isset($_GET['menu_id']) && isset($_GET['asc_nom']) && !isset($_GET['desc_nom']) && !isset($_GET['asc_prix']) && !isset($_GET['desc_prix'])){
-									echo'prix 17';
 
 											$PDO_query_nbProduits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_promo > 0 AND eg_marque_id = :eg_marque_id AND eg_sous_categorie_id = :eg_sous_categorie_id ORDER BY eg_produit_nom ASC");
 											$PDO_query_nbProduits->bindParam(":eg_sous_categorie_id", $sous_cat_id, PDO::PARAM_INT);
@@ -1303,7 +1277,7 @@
 											$PDO_query_nbProduits->closeCursor();
 											
 											// On détermine le nombre d'articles par page
-											$parPage = 21;
+											$parPage = 9;
 											
 											// On calcule le nombre de pages total
 											$pages = ceil($nbProduits / $parPage);
@@ -1318,7 +1292,6 @@
 									$PDO_query_listes_produits->bindParam(":eg_marque_id", $marque_id, PDO::PARAM_INT);
 					
 								}elseif(isset($_GET['marque_id']) && isset($_GET['sous_cat_id']) && !isset($_GET['cat_id']) && !isset($_GET['menu_id']) && !isset($_GET['asc_nom']) && !isset($_GET['desc_nom']) && isset($_GET['asc_prix']) && !isset($_GET['desc_prix'])){
-									echo'prix 17.1';
 
 											$PDO_query_nbProduits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_promo > 0 AND eg_marque_id = :eg_marque_id AND eg_sous_categorie_id = :eg_sous_categorie_id ORDER BY eg_produit_prix ASC");
 											$PDO_query_nbProduits->bindParam(":eg_sous_categorie_id", $sous_cat_id, PDO::PARAM_INT);
@@ -1328,7 +1301,7 @@
 											$PDO_query_nbProduits->closeCursor();
 											
 											// On détermine le nombre d'articles par page
-											$parPage = 21;
+											$parPage = 9;
 											
 											// On calcule le nombre de pages total
 											$pages = ceil($nbProduits / $parPage);
@@ -1343,7 +1316,6 @@
 									$PDO_query_listes_produits->bindParam(":eg_marque_id", $marque_id, PDO::PARAM_INT);
 					
 								}elseif(!isset($_GET['marque_id']) && isset($_GET['menu_id']) && !isset($_GET['sous_cat_id']) && !isset($_GET['cat_id']) && !isset($_GET['desc_nom']) && !isset($_GET['asc_nom']) && !isset($_GET['asc_prix']) && !isset($_GET['desc_prix'])){
-									echo'prix 18';
 
 											$PDO_query_nbProduits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_promo > 0 AND eg_menu_id = :eg_menu_id ORDER BY eg_produit_prix ASC");
 											$PDO_query_nbProduits->bindParam(":eg_menu_id", $menu_id, PDO::PARAM_INT);
@@ -1352,7 +1324,7 @@
 											$PDO_query_nbProduits->closeCursor();
 											
 											// On détermine le nombre d'articles par page
-											$parPage = 21;
+											$parPage = 9;
 											
 											// On calcule le nombre de pages total
 											$pages = ceil($nbProduits / $parPage);
@@ -1366,7 +1338,6 @@
 									$PDO_query_listes_produits->bindParam(":eg_menu_id", $menu_id, PDO::PARAM_INT);
 					
 								}elseif(isset($_GET['marque_id']) && isset($_GET['menu_id']) && !isset($_GET['sous_cat_id']) && !isset($_GET['cat_id']) && isset($_GET['desc_nom']) && !isset($_GET['asc_nom']) && !isset($_GET['asc_prix']) && !isset($_GET['desc_prix'])){
-									echo'prix 19';
 
 											$PDO_query_nbProduits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_promo > 0 AND eg_marque_id = :eg_marque_id AND eg_menu_id = :eg_menu_id ORDER BY eg_produit_nom DESC");
 											$PDO_query_nbProduits->bindParam(":eg_menu_id", $menu_id, PDO::PARAM_INT);
@@ -1376,7 +1347,7 @@
 											$PDO_query_nbProduits->closeCursor();
 											
 											// On détermine le nombre d'articles par page
-											$parPage = 21;
+											$parPage = 9;
 											
 											// On calcule le nombre de pages total
 											$pages = ceil($nbProduits / $parPage);
@@ -1391,7 +1362,6 @@
 									$PDO_query_listes_produits->bindParam(":eg_marque_id", $marque_id, PDO::PARAM_INT);
 					
 								}elseif(isset($_GET['marque_id']) && isset($_GET['menu_id']) && !isset($_GET['sous_cat_id']) && !isset($_GET['cat_id']) && !isset($_GET['desc_nom']) && !isset($_GET['asc_nom']) && !isset($_GET['asc_prix']) && isset($_GET['desc_prix'])){
-									echo'prix 19.1';
 
 											$PDO_query_nbProduits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_promo > 0 AND eg_marque_id = :eg_marque_id AND eg_menu_id = :eg_menu_id ORDER BY eg_produit_prix DESC");
 											$PDO_query_nbProduits->bindParam(":eg_menu_id", $menu_id, PDO::PARAM_INT);
@@ -1401,7 +1371,7 @@
 											$PDO_query_nbProduits->closeCursor();
 											
 											// On détermine le nombre d'articles par page
-											$parPage = 21;
+											$parPage = 9;
 											
 											// On calcule le nombre de pages total
 											$pages = ceil($nbProduits / $parPage);
@@ -1416,7 +1386,6 @@
 									$PDO_query_listes_produits->bindParam(":eg_marque_id", $marque_id, PDO::PARAM_INT);
 					
 								}elseif(!isset($_GET['marque_id']) && isset($_GET['menu_id']) && !isset($_GET['sous_cat_id']) && !isset($_GET['cat_id']) && isset($_GET['desc_nom']) && !isset($_GET['asc_nom']) && !isset($_GET['asc_prix']) && !isset($_GET['desc_prix'])){
-									echo'prix 20';
 
 											$PDO_query_nbProduits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_promo > 0 AND eg_menu_id = :eg_menu_id ORDER BY eg_produit_nom DESC");
 											$PDO_query_nbProduits->bindParam(":eg_menu_id", $menu_id, PDO::PARAM_INT);
@@ -1425,7 +1394,7 @@
 											$PDO_query_nbProduits->closeCursor();
 											
 											// On détermine le nombre d'articles par page
-											$parPage = 21;
+											$parPage = 9;
 											
 											// On calcule le nombre de pages total
 											$pages = ceil($nbProduits / $parPage);
@@ -1439,7 +1408,6 @@
 									$PDO_query_listes_produits->bindParam(":eg_menu_id", $menu_id, PDO::PARAM_INT);
 					
 								}elseif(!isset($_GET['marque_id']) && isset($_GET['menu_id']) && !isset($_GET['sous_cat_id']) && !isset($_GET['cat_id']) && !isset($_GET['desc_nom']) && !isset($_GET['asc_nom']) && !isset($_GET['asc_prix']) && isset($_GET['desc_prix'])){
-									echo'prix 20.1';
 
 											$PDO_query_nbProduits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_promo > 0 AND eg_menu_id = :eg_menu_id ORDER BY eg_produit_prix DESC");
 											$PDO_query_nbProduits->bindParam(":eg_menu_id", $menu_id, PDO::PARAM_INT);
@@ -1448,7 +1416,7 @@
 											$PDO_query_nbProduits->closeCursor();
 											
 											// On détermine le nombre d'articles par page
-											$parPage = 21;
+											$parPage = 9;
 											
 											// On calcule le nombre de pages total
 											$pages = ceil($nbProduits / $parPage);
@@ -1462,7 +1430,6 @@
 									$PDO_query_listes_produits->bindParam(":eg_menu_id", $menu_id, PDO::PARAM_INT);
 					
 								}elseif(isset($_GET['marque_id']) && !isset($_GET['menu_id']) && !isset($_GET['sous_cat_id']) && !isset($_GET['cat_id']) && isset($_GET['desc_nom']) && !isset($_GET['asc_nom']) && !isset($_GET['asc_prix']) && !isset($_GET['desc_prix'])){
-									echo'prix 21';		
 									
 											$PDO_query_nbProduits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_promo > 0 AND eg_marque_id = :eg_marque_id ORDER BY eg_produit_nom DESC");
 											$PDO_query_nbProduits->bindParam(":eg_marque_id", $marque_id, PDO::PARAM_INT);
@@ -1471,7 +1438,7 @@
 											$PDO_query_nbProduits->closeCursor();
 
 											// On détermine le nombre d'articles par page
-											$parPage = 21;
+											$parPage = 9;
 
 											// On calcule le nombre de pages total
 											$pages = ceil($nbProduits / $parPage);
@@ -1485,7 +1452,6 @@
 									$PDO_query_listes_produits->bindParam(":eg_marque_id", $marque_id, PDO::PARAM_INT);
 					
 								}elseif(isset($_GET['marque_id']) && !isset($_GET['menu_id']) && !isset($_GET['sous_cat_id']) && !isset($_GET['cat_id']) && !isset($_GET['desc_nom']) && !isset($_GET['asc_nom']) && !isset($_GET['asc_prix']) && isset($_GET['desc_prix'])){
-									echo'prix 21.1';		
 									
 											$PDO_query_nbProduits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_promo > 0 AND eg_marque_id = :eg_marque_id ORDER BY eg_produit_prix DESC");
 											$PDO_query_nbProduits->bindParam(":eg_marque_id", $marque_id, PDO::PARAM_INT);
@@ -1494,7 +1460,7 @@
 											$PDO_query_nbProduits->closeCursor();
 
 											// On détermine le nombre d'articles par page
-											$parPage = 21;
+											$parPage = 9;
 
 											// On calcule le nombre de pages total
 											$pages = ceil($nbProduits / $parPage);
@@ -1508,7 +1474,6 @@
 									$PDO_query_listes_produits->bindParam(":eg_marque_id", $marque_id, PDO::PARAM_INT);
 					
 								}elseif(isset($_GET['marque_id']) && !isset($_GET['menu_id']) && !isset($_GET['sous_cat_id']) && !isset($_GET['cat_id']) && !isset($_GET['desc_nom']) && !isset($_GET['asc_nom']) && !isset($_GET['asc_prix']) && !isset($_GET['desc_prix'])){
-									echo'prix 22';	
 									
 											$PDO_query_nbProduits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_promo > 0 AND eg_marque_id = :eg_marque_id ORDER BY eg_produit_prix ASC");
 											$PDO_query_nbProduits->bindParam(":eg_marque_id", $marque_id, PDO::PARAM_INT);
@@ -1517,7 +1482,7 @@
 											$PDO_query_nbProduits->closeCursor();
 											
 											// On détermine le nombre d'articles par page
-											$parPage = 21;
+											$parPage = 9;
 											
 											// On calcule le nombre de pages total
 											$pages = ceil($nbProduits / $parPage);
@@ -1531,7 +1496,6 @@
 									$PDO_query_listes_produits->bindParam(":eg_marque_id", $marque_id, PDO::PARAM_INT);
 					
 								}elseif(isset($_GET['marque_id']) && isset($_GET['menu_id']) && !isset($_GET['sous_cat_id']) && isset($_GET['cat_id']) && isset($_GET['desc_nom']) && !isset($_GET['asc_nom']) && !isset($_GET['asc_prix']) && !isset($_GET['desc_prix'])){
-									echo'prix 23';
 
 											$PDO_query_nbProduits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_promo > 0 AND eg_marque_id = :eg_marque_id AND eg_menu_id = :eg_menu_id ORDER BY eg_produit_nom DESC");
 											$PDO_query_nbProduits->bindParam(":eg_menu_id", $menu_id, PDO::PARAM_INT);
@@ -1541,7 +1505,7 @@
 											$PDO_query_nbProduits->closeCursor();
 											
 											// On détermine le nombre d'articles par page
-											$parPage = 21;
+											$parPage = 9;
 											
 											// On calcule le nombre de pages total
 											$pages = ceil($nbProduits / $parPage);
@@ -1556,7 +1520,6 @@
 									$PDO_query_listes_produits->bindParam(":eg_marque_id", $marque_id, PDO::PARAM_INT);
 					
 								}elseif(isset($_GET['marque_id']) && isset($_GET['menu_id']) && !isset($_GET['sous_cat_id']) && isset($_GET['cat_id']) && !isset($_GET['desc_nom']) && !isset($_GET['asc_nom']) && !isset($_GET['asc_prix']) && isset($_GET['desc_prix'])){
-									echo'prix 23.1';
 
 											$PDO_query_nbProduits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_promo > 0 AND eg_marque_id = :eg_marque_id AND eg_menu_id = :eg_menu_id ORDER BY eg_produit_prix DESC");
 											$PDO_query_nbProduits->bindParam(":eg_menu_id", $menu_id, PDO::PARAM_INT);
@@ -1566,7 +1529,7 @@
 											$PDO_query_nbProduits->closeCursor();
 											
 											// On détermine le nombre d'articles par page
-											$parPage = 21;
+											$parPage = 9;
 											
 											// On calcule le nombre de pages total
 											$pages = ceil($nbProduits / $parPage);
@@ -1581,7 +1544,6 @@
 									$PDO_query_listes_produits->bindParam(":eg_marque_id", $marque_id, PDO::PARAM_INT);
 					
 								}elseif(!isset($_GET['marque_id']) && isset($_GET['cat_id']) && !isset($_GET['menu_id']) && !isset($_GET['sous_cat_id']) && !isset($_GET['desc_nom']) && !isset($_GET['asc_nom']) && !isset($_GET['asc_prix']) && !isset($_GET['desc_prix'])){
-									echo'prix 24';
 
 											$PDO_query_nbProduits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_promo > 0 AND eg_categorie_id = :eg_categorie_id ORDER BY eg_produit_prix ASC");
 											$PDO_query_nbProduits->bindParam(":eg_categorie_id", $cat_id, PDO::PARAM_INT);
@@ -1590,7 +1552,7 @@
 											$PDO_query_nbProduits->closeCursor();
 											
 											// On détermine le nombre d'articles par page
-											$parPage = 21;
+											$parPage = 9;
 											
 											// On calcule le nombre de pages total
 											$pages = ceil($nbProduits / $parPage);
@@ -1604,7 +1566,6 @@
 									$PDO_query_listes_produits->bindParam(":eg_categorie_id", $cat_id, PDO::PARAM_INT);
 					
 								}elseif(isset($_GET['marque_id']) && !isset($_GET['cat_id']) && !isset($_GET['menu_id']) && !isset($_GET['sous_cat_id']) && !isset($_GET['desc_nom']) && !isset($_GET['asc_nom']) && !isset($_GET['asc_prix']) && !isset($_GET['desc_prix'])){
-									echo'prix 25';
 
 											$PDO_query_nbProduits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_promo > 0 AND eg_marque_id = :eg_marque_id ORDER BY eg_produit_prix ASC");
 											$PDO_query_nbProduits->bindParam(":eg_marque_id", $marque_id, PDO::PARAM_INT);
@@ -1613,7 +1574,7 @@
 											$PDO_query_nbProduits->closeCursor();
 											
 											// On détermine le nombre d'articles par page
-											$parPage = 21;
+											$parPage = 9;
 											
 											// On calcule le nombre de pages total
 											$pages = ceil($nbProduits / $parPage);
@@ -1627,7 +1588,6 @@
 									$PDO_query_listes_produits->bindParam(":eg_marque_id", $marque_id, PDO::PARAM_INT);
 					
 								}elseif(isset($_GET['marque_id']) && isset($_GET['cat_id']) && !isset($_GET['menu_id']) && !isset($_GET['sous_cat_id']) && !isset($_GET['desc_nom']) && !isset($_GET['asc_nom']) && !isset($_GET['asc_prix']) && !isset($_GET['desc_prix'])){
-									echo'prix 26';
 
 											$PDO_query_nbProduits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_promo > 0 AND eg_marque_id = :eg_marque_id AND eg_categorie_id = :eg_categorie_id ORDER BY eg_produit_prix ASC");
 											$PDO_query_nbProduits->bindParam(":eg_categorie_id", $cat_id, PDO::PARAM_INT);
@@ -1637,7 +1597,7 @@
 											$PDO_query_nbProduits->closeCursor();
 											
 											// On détermine le nombre d'articles par page
-											$parPage = 21;
+											$parPage = 9;
 											
 											// On calcule le nombre de pages total
 											$pages = ceil($nbProduits / $parPage);
@@ -1652,7 +1612,6 @@
 									$PDO_query_listes_produits->bindParam(":eg_marque_id", $marque_id, PDO::PARAM_INT);
 					
 								}elseif(!isset($_GET['marque_id']) && isset($_GET['cat_id']) && !isset($_GET['menu_id']) && !isset($_GET['sous_cat_id']) && isset($_GET['desc_nom']) && !isset($_GET['asc_nom']) && !isset($_GET['asc_prix']) && !isset($_GET['desc_prix'])){
-									echo'prix 27';
 
 											$PDO_query_nbProduits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_promo > 0 AND eg_categorie_id = :eg_categorie_id ORDER BY eg_produit_nom DESC");
 											$PDO_query_nbProduits->bindParam(":eg_categorie_id", $cat_id, PDO::PARAM_INT);
@@ -1661,7 +1620,7 @@
 											$PDO_query_nbProduits->closeCursor();
 											
 											// On détermine le nombre d'articles par page
-											$parPage = 21;
+											$parPage = 9;
 											
 											// On calcule le nombre de pages total
 											$pages = ceil($nbProduits / $parPage);
@@ -1675,7 +1634,6 @@
 									$PDO_query_listes_produits->bindParam(":eg_categorie_id", $cat_id, PDO::PARAM_INT);
 					
 								}elseif(!isset($_GET['marque_id']) && isset($_GET['cat_id']) && !isset($_GET['menu_id']) && !isset($_GET['sous_cat_id']) && !isset($_GET['desc_nom']) && !isset($_GET['asc_nom']) && !isset($_GET['asc_prix']) && isset($_GET['desc_prix'])){
-									echo'prix 27.1';
 
 											$PDO_query_nbProduits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_promo > 0 AND eg_categorie_id = :eg_categorie_id ORDER BY eg_produit_prix DESC");
 											$PDO_query_nbProduits->bindParam(":eg_categorie_id", $cat_id, PDO::PARAM_INT);
@@ -1684,7 +1642,7 @@
 											$PDO_query_nbProduits->closeCursor();
 											
 											// On détermine le nombre d'articles par page
-											$parPage = 21;
+											$parPage = 9;
 											
 											// On calcule le nombre de pages total
 											$pages = ceil($nbProduits / $parPage);
@@ -1698,7 +1656,6 @@
 									$PDO_query_listes_produits->bindParam(":eg_categorie_id", $cat_id, PDO::PARAM_INT);
 					
 								}elseif(isset($_GET['marque_id']) && !isset($_GET['cat_id']) && !isset($_GET['menu_id']) && !isset($_GET['sous_cat_id']) && isset($_GET['desc_nom']) && !isset($_GET['asc_nom']) && !isset($_GET['asc_prix']) && !isset($_GET['desc_prix'])){
-									echo'prix 28';	
 									
 											$PDO_query_nbProduits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_promo > 0 AND eg_marque_id = :eg_marque_id ORDER BY eg_produit_nom DESC");
 											$PDO_query_nbProduits->bindParam(":eg_marque_id", $marque_id, PDO::PARAM_INT);
@@ -1707,7 +1664,7 @@
 											$PDO_query_nbProduits->closeCursor();
 											
 											// On détermine le nombre d'articles par page
-											$parPage = 21;
+											$parPage = 9;
 											
 											// On calcule le nombre de pages total
 											$pages = ceil($nbProduits / $parPage);
@@ -1721,7 +1678,6 @@
 									$PDO_query_listes_produits->bindParam(":eg_marque_id", $marque_id, PDO::PARAM_INT);
 					
 								}elseif(isset($_GET['marque_id']) && !isset($_GET['cat_id']) && !isset($_GET['menu_id']) && !isset($_GET['sous_cat_id']) && !isset($_GET['desc_nom']) && !isset($_GET['asc_nom']) && !isset($_GET['asc_prix']) && isset($_GET['desc_prix'])){
-									echo'prix 28.1';	
 									
 											$PDO_query_nbProduits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_promo > 0 AND eg_marque_id = :eg_marque_id ORDER BY eg_produit_prix DESC");
 											$PDO_query_nbProduits->bindParam(":eg_marque_id", $marque_id, PDO::PARAM_INT);
@@ -1730,7 +1686,7 @@
 											$PDO_query_nbProduits->closeCursor();
 											
 											// On détermine le nombre d'articles par page
-											$parPage = 21;
+											$parPage = 9;
 											
 											// On calcule le nombre de pages total
 											$pages = ceil($nbProduits / $parPage);
@@ -1744,7 +1700,6 @@
 									$PDO_query_listes_produits->bindParam(":eg_marque_id", $marque_id, PDO::PARAM_INT);
 					
 								}elseif(isset($_GET['marque_id']) && isset($_GET['cat_id']) && !isset($_GET['menu_id']) && !isset($_GET['sous_cat_id']) && isset($_GET['desc_nom']) && !isset($_GET['asc_nom']) && !isset($_GET['asc_prix']) && !isset($_GET['desc_prix'])){
-									echo'prix 29';
 
 											$PDO_query_nbProduits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_promo > 0 AND eg_marque_id = :eg_marque_id AND eg_categorie_id = :eg_categorie_id ORDER BY eg_produit_nom DESC");
 											$PDO_query_nbProduits->bindParam(":eg_categorie_id", $cat_id, PDO::PARAM_INT);
@@ -1754,7 +1709,7 @@
 											$PDO_query_nbProduits->closeCursor();
 											
 											// On détermine le nombre d'articles par page
-											$parPage = 21;
+											$parPage = 9;
 											
 											// On calcule le nombre de pages total
 											$pages = ceil($nbProduits / $parPage);
@@ -1769,7 +1724,6 @@
 									$PDO_query_listes_produits->bindParam(":eg_marque_id", $marque_id, PDO::PARAM_INT);
 					
 								}elseif(isset($_GET['marque_id']) && isset($_GET['cat_id']) && !isset($_GET['menu_id']) && !isset($_GET['sous_cat_id']) && !isset($_GET['desc_nom']) && !isset($_GET['asc_nom']) && !isset($_GET['asc_prix']) && isset($_GET['desc_prix'])){
-									echo'prix 29.1';
 
 											$PDO_query_nbProduits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_promo > 0 AND eg_marque_id = :eg_marque_id AND eg_categorie_id = :eg_categorie_id ORDER BY eg_produit_prix DESC");
 											$PDO_query_nbProduits->bindParam(":eg_categorie_id", $cat_id, PDO::PARAM_INT);
@@ -1779,7 +1733,7 @@
 											$PDO_query_nbProduits->closeCursor();
 											
 											// On détermine le nombre d'articles par page
-											$parPage = 21;
+											$parPage = 9;
 											
 											// On calcule le nombre de pages total
 											$pages = ceil($nbProduits / $parPage);
@@ -1794,7 +1748,6 @@
 									$PDO_query_listes_produits->bindParam(":eg_marque_id", $marque_id, PDO::PARAM_INT);
 					
 								}elseif(!isset($_GET['marque_id']) && isset($_GET['sous_cat_id']) && !isset($_GET['menu_id']) && !isset($_GET['cat_id']) && !isset($_GET['desc_nom']) && !isset($_GET['asc_nom']) && !isset($_GET['asc_prix']) && !isset($_GET['desc_prix'])){
-									echo'prix 30';
 
 											$PDO_query_nbProduits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_promo > 0 AND eg_sous_categorie_id = :eg_sous_categorie_id ORDER BY eg_produit_prix ASC");
 											$PDO_query_nbProduits->bindParam(":eg_sous_categorie_id", $sous_cat_id, PDO::PARAM_INT);									$PDO_query_nbProduits->execute();
@@ -1802,7 +1755,7 @@
 											$PDO_query_nbProduits->closeCursor();
 											
 											// On détermine le nombre d'articles par page
-											$parPage = 21;
+											$parPage = 9;
 											
 											// On calcule le nombre de pages total
 											$pages = ceil($nbProduits / $parPage);
@@ -1816,7 +1769,6 @@
 									$PDO_query_listes_produits->bindParam(":eg_sous_categorie_id", $sous_cat_id, PDO::PARAM_INT);
 					
 								}elseif(isset($_GET['marque_id']) && !isset($_GET['sous_cat_id']) && !isset($_GET['menu_id']) && !isset($_GET['cat_id']) && !isset($_GET['desc_nom']) && !isset($_GET['asc_nom']) && !isset($_GET['asc_prix']) && !isset($_GET['desc_prix'])){
-									echo'prix 31';
 
 											$PDO_query_nbProduits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_promo > 0 AND eg_marque_id = :eg_marque_id ORDER BY eg_produit_prix ASC");
 											$PDO_query_nbProduits->bindParam(":eg_marque_id", $marque_id, PDO::PARAM_INT);
@@ -1825,7 +1777,7 @@
 											$PDO_query_nbProduits->closeCursor();
 											
 											// On détermine le nombre d'articles par page
-											$parPage = 21;
+											$parPage = 9;
 											
 											// On calcule le nombre de pages total
 											$pages = ceil($nbProduits / $parPage);
@@ -1839,7 +1791,6 @@
 									$PDO_query_listes_produits->bindParam(":eg_marque_id", $marque_id, PDO::PARAM_INT);
 					
 								}elseif(isset($_GET['marque_id']) && isset($_GET['sous_cat_id']) && !isset($_GET['menu_id']) && !isset($_GET['cat_id']) && !isset($_GET['desc_nom']) && !isset($_GET['asc_nom']) && !isset($_GET['asc_prix']) && !isset($_GET['desc_prix'])){
-									echo'prix 32';
 
 											$PDO_query_nbProduits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_promo > 0 AND eg_marque_id = :eg_marque_id AND eg_sous_categorie_id = :eg_sous_categorie_id ORDER BY eg_produit_prix ASC");
 											$PDO_query_nbProduits->bindParam(":eg_sous_categorie_id", $sous_cat_id, PDO::PARAM_INT);
@@ -1849,7 +1800,7 @@
 											$PDO_query_nbProduits->closeCursor();
 											
 											// On détermine le nombre d'articles par page
-											$parPage = 21;
+											$parPage = 9;
 											
 											// On calcule le nombre de pages total
 											$pages = ceil($nbProduits / $parPage);
@@ -1864,7 +1815,6 @@
 									$PDO_query_listes_produits->bindParam(":eg_marque_id", $marque_id, PDO::PARAM_INT);
 					
 								}elseif(!isset($_GET['marque_id']) && isset($_GET['sous_cat_id']) && !isset($_GET['menu_id']) && !isset($_GET['cat_id']) && isset($_GET['desc_nom']) && !isset($_GET['asc_nom']) && !isset($_GET['asc_prix']) && !isset($_GET['desc_prix'])){
-									echo'prix 33';
 
 											$PDO_query_nbProduits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_promo > 0 AND eg_sous_categorie_id = :eg_sous_categorie_id ORDER BY eg_produit_nom DESC");
 											$PDO_query_nbProduits->bindParam(":eg_sous_categorie_id", $sous_cat_id, PDO::PARAM_INT);
@@ -1873,7 +1823,7 @@
 											$PDO_query_nbProduits->closeCursor();
 											
 											// On détermine le nombre d'articles par page
-											$parPage = 21;
+											$parPage = 9;
 											
 											// On calcule le nombre de pages total
 											$pages = ceil($nbProduits / $parPage);
@@ -1887,7 +1837,6 @@
 									$PDO_query_listes_produits->bindParam(":eg_sous_categorie_id", $sous_cat_id, PDO::PARAM_INT);
 					
 								}elseif(!isset($_GET['marque_id']) && isset($_GET['sous_cat_id']) && !isset($_GET['menu_id']) && !isset($_GET['cat_id']) && !isset($_GET['desc_nom']) && !isset($_GET['asc_nom']) && !isset($_GET['asc_prix']) && isset($_GET['desc_prix'])){
-									echo'prix 33.1';
 
 											$PDO_query_nbProduits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_promo > 0 AND eg_sous_categorie_id = :eg_sous_categorie_id ORDER BY eg_produit_prix DESC");
 											$PDO_query_nbProduits->bindParam(":eg_sous_categorie_id", $sous_cat_id, PDO::PARAM_INT);
@@ -1896,7 +1845,7 @@
 											$PDO_query_nbProduits->closeCursor();
 											
 											// On détermine le nombre d'articles par page
-											$parPage = 21;
+											$parPage = 9;
 											
 											// On calcule le nombre de pages total
 											$pages = ceil($nbProduits / $parPage);
@@ -1910,7 +1859,6 @@
 									$PDO_query_listes_produits->bindParam(":eg_sous_categorie_id", $sous_cat_id, PDO::PARAM_INT);
 					
 								}elseif(isset($_GET['marque_id']) && !isset($_GET['sous_cat_id']) && !isset($_GET['menu_id']) && !isset($_GET['cat_id']) && isset($_GET['desc_nom']) && !isset($_GET['asc_nom']) && !isset($_GET['asc_prix']) && !isset($_GET['desc_prix'])){
-									echo'prix 34';				
 
 											$PDO_query_nbProduits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_promo > 0 AND eg_marque_id = :eg_marque_id ORDER BY eg_produit_nom DESC");
 											$PDO_query_nbProduits->bindParam(":eg_marque_id", $marque_id, PDO::PARAM_INT);
@@ -1919,7 +1867,7 @@
 											$PDO_query_nbProduits->closeCursor();
 											
 											// On détermine le nombre d'articles par page
-											$parPage = 21;
+											$parPage = 9;
 											
 											// On calcule le nombre de pages total
 											$pages = ceil($nbProduits / $parPage);
@@ -1933,7 +1881,6 @@
 									$PDO_query_listes_produits->bindParam(":eg_marque_id", $marque_id, PDO::PARAM_INT);
 					
 								}elseif(isset($_GET['marque_id']) && !isset($_GET['sous_cat_id']) && !isset($_GET['menu_id']) && !isset($_GET['cat_id']) && !isset($_GET['desc_nom']) && !isset($_GET['asc_nom']) && !isset($_GET['asc_prix']) && isset($_GET['desc_prix'])){
-									echo'prix 34.1';		
 									
 											$PDO_query_nbProduits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_promo > 0 AND eg_marque_id = :eg_marque_id ORDER BY eg_produit_prix DESC");
 											$PDO_query_nbProduits->bindParam(":eg_marque_id", $marque_id, PDO::PARAM_INT);
@@ -1942,7 +1889,7 @@
 											$PDO_query_nbProduits->closeCursor();
 											
 											// On détermine le nombre d'articles par page
-											$parPage = 21;
+											$parPage = 9;
 											
 											// On calcule le nombre de pages total
 											$pages = ceil($nbProduits / $parPage);
@@ -1956,7 +1903,6 @@
 									$PDO_query_listes_produits->bindParam(":eg_marque_id", $marque_id, PDO::PARAM_INT);
 					
 								}elseif(isset($_GET['marque_id']) && isset($_GET['sous_cat_id']) && !isset($_GET['menu_id']) && !isset($_GET['cat_id']) && isset($_GET['desc_nom']) && !isset($_GET['asc_nom']) && !isset($_GET['asc_prix']) && !isset($_GET['desc_prix'])){
-									echo'prix 35';
 
 											$PDO_query_nbProduits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_promo > 0 AND eg_marque_id = :eg_marque_id AND eg_sous_categorie_id = :eg_sous_categorie_id ORDER BY eg_produit_nom DESC");
 											$PDO_query_nbProduits->bindParam(":eg_marque_id", $marque_id, PDO::PARAM_INT);
@@ -1965,7 +1911,7 @@
 											$PDO_query_nbProduits->closeCursor();
 											
 											// On détermine le nombre d'articles par page
-											$parPage = 21;
+											$parPage = 9;
 											
 											// On calcule le nombre de pages total
 											$pages = ceil($nbProduits / $parPage);
@@ -1980,7 +1926,6 @@
 									$PDO_query_listes_produits->bindParam(":eg_marque_id", $marque_id, PDO::PARAM_INT);
 					
 								}elseif(isset($_GET['marque_id']) && isset($_GET['sous_cat_id']) && !isset($_GET['menu_id']) && !isset($_GET['cat_id']) && !isset($_GET['desc_nom']) && !isset($_GET['asc_nom']) && !isset($_GET['asc_prix']) && isset($_GET['desc_prix'])){
-									echo'prix 35.1';
 
 											$PDO_query_nbProduits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_promo > 0 AND eg_marque_id = :eg_marque_id AND eg_sous_categorie_id = :eg_sous_categorie_id ORDER BY eg_produit_prix DESC");
 											$PDO_query_nbProduits->bindParam(":eg_sous_categorie_id", $sous_cat_id, PDO::PARAM_INT);
@@ -1990,7 +1935,7 @@
 											$PDO_query_nbProduits->closeCursor();
 											
 											// On détermine le nombre d'articles par page
-											$parPage = 21;
+											$parPage = 9;
 											
 											// On calcule le nombre de pages total
 											$pages = ceil($nbProduits / $parPage);
@@ -2005,7 +1950,6 @@
 									$PDO_query_listes_produits->bindParam(":eg_marque_id", $marque_id, PDO::PARAM_INT);
 					
 								}elseif(!isset($_GET['marque_id']) && !isset($_GET['cat_id']) && !isset($_GET['sous_cat_id']) && !isset($_GET['desc_nom']) && !isset($_GET['asc_nom']) && isset($_GET['asc_prix']) && !isset($_GET['desc_prix'])){
-									echo'prix 36';
 
 											$PDO_query_nbProduits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_promo > 0 ORDER BY eg_produit_prix ASC");
 											$PDO_query_nbProduits->execute();
@@ -2013,7 +1957,7 @@
 											$PDO_query_nbProduits->closeCursor();
 											
 											// On détermine le nombre d'articles par page
-											$parPage = 21;
+											$parPage = 9;
 											
 											// On calcule le nombre de pages total
 											$pages = ceil($nbProduits / $parPage);
@@ -2026,7 +1970,6 @@
 									$PDO_query_listes_produits->bindParam(":parpage", $parPage, PDO::PARAM_INT);
 					
 								}elseif(!isset($_GET['marque_id']) && !isset($_GET['cat_id']) && !isset($_GET['sous_cat_id']) && !isset($_GET['desc_nom']) && !isset($_GET['asc_nom']) && !isset($_GET['asc_prix']) && isset($_GET['desc_prix'])){
-									echo'prix 36.1';
 
 											$PDO_query_nbProduits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_promo > 0 ORDER BY eg_produit_prix DESC");
 											$PDO_query_nbProduits->execute();
@@ -2034,7 +1977,7 @@
 											$PDO_query_nbProduits->closeCursor();
 											
 											// On détermine le nombre d'articles par page
-											$parPage = 21;
+											$parPage = 9;
 											
 											// On calcule le nombre de pages total
 											$pages = ceil($nbProduits / $parPage);
@@ -2047,7 +1990,6 @@
 									$PDO_query_listes_produits->bindParam(":parpage", $parPage, PDO::PARAM_INT);
 					
 								}elseif(!isset($_GET['marque_id']) && !isset($_GET['cat_id']) && !isset($_GET['sous_cat_id']) && !isset($_GET['desc_nom']) && isset($_GET['asc_nom']) && !isset($_GET['asc_prix']) && !isset($_GET['desc_prix'])){
-									echo'prix 36.2';
 
 											$PDO_query_nbProduits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_promo > 0 ORDER BY eg_produit_nom ASC");
 											$PDO_query_nbProduits->execute();
@@ -2055,7 +1997,7 @@
 											$PDO_query_nbProduits->closeCursor();
 											
 											// On détermine le nombre d'articles par page
-											$parPage = 21;
+											$parPage = 9;
 											
 											// On calcule le nombre de pages total
 											$pages = ceil($nbProduits / $parPage);
@@ -2068,7 +2010,6 @@
 									$PDO_query_listes_produits->bindParam(":parpage", $parPage, PDO::PARAM_INT);
 					
 								}elseif(!isset($_GET['marque_id']) && !isset($_GET['cat_id']) && !isset($_GET['sous_cat_id']) && isset($_GET['desc_nom']) && !isset($_GET['asc_nom']) && !isset($_GET['asc_prix']) && !isset($_GET['desc_prix'])){
-									echo'prix 36.3';
 
 											$PDO_query_nbProduits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_promo > 0 ORDER BY eg_produit_nom DESC");
 											$PDO_query_nbProduits->execute();
@@ -2076,7 +2017,7 @@
 											$PDO_query_nbProduits->closeCursor();
 											
 											// On détermine le nombre d'articles par page
-											$parPage = 21;
+											$parPage = 9;
 											
 											// On calcule le nombre de pages total
 											$pages = ceil($nbProduits / $parPage);
@@ -2291,19 +2232,21 @@
 								
 								<div class="box-pagination col-md-12 col-sm-4 text-center">
 								<ul class="pagination">
-											<!-- Lien vers la page précédente (désactivé si on se trouve sur la 1ère page) -->
+											<?php $chaine = $_SERVER['REQUEST_URI'];
+    												$nbr = 7;
+    												$lien = substr($chaine, 0, -$nbr);?>											
 											<li class="page-item <?= ($currentPage == 1) ? "disabled" : "" ?>">
-												<a href="<?php echo $_SERVER['REQUEST_URI'];?>&page=<?= $currentPage - 1 ?>" class="page-link"><</a>
+												<a href="<?php echo $lien;?>&page=<?= $currentPage - 1 ?>" class="page-link"><</a>
 											</li>
 											<?php for($page = 1; $page <= $pages; $page++): ?>
 												<!-- Lien vers chacune des pages (activé si on se trouve sur la page correspondante) -->
 												<li class="page-item <?= ($currentPage == $page) ? "active" : "" ?>">
-													<a href="<?php echo $_SERVER['REQUEST_URI'];?>&page=<?= $page ?>" class="page-link"><?= $page ?></a>
+													<a href="<?php echo $lien;?>&page=<?= $page ?>" class="page-link"><?= $page ?></a>
 												</li>
 											<?php endfor ?>
 												<!-- Lien vers la page suivante (désactivé si on se trouve sur la dernière page) -->
 												<li class="page-item <?= ($currentPage == $pages) ? "disabled" : "" ?>">
-												<a href="<?php echo $_SERVER['REQUEST_URI'];?>&page=<?= $currentPage + 1 ?>" class="page-link">></a>
+												<a href="<?php echo $lien;?>&page=<?= $currentPage + 1 ?>" class="page-link">></a>
 											</li>
 										</ul>
 								</div>

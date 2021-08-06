@@ -9,9 +9,9 @@ include("../config/fonction.php");
 			$categorie_id = '';
 		}
 		if(isset($_POST['recherche'])){
-			$recherche = trim(strip_tags($_POST['recherche']));
+			$recherche = "%".trim(strip_tags($_POST['recherche']))."%";
 		}else{
-			$recherche = '';
+			$recherche = "";
 		}
 		
 		
@@ -136,30 +136,29 @@ include("../config/fonction.php");
 
 							if(strpos($str, $mot) !== false && $recherche == ''){
 								$cat = substr($str, -2);
-								echo $cat;
 								$PDO_query_listes_produits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_categorie_id = :cat ORDER BY eg_produit_prix ASC");
 								$PDO_query_listes_produits->bindParam(":cat", $cat, PDO::PARAM_INT);
 								
 							}elseif(strpos($str, $mot) !== false && $recherche != ''){
 								$cat = substr($str, -2);
-								echo $cat.'22';
-								$PDO_query_listes_produits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_nom LIKE '%".$recherche."%' AND eg_categorie_id = :cat ORDER BY eg_produit_prix ASC");
+								$PDO_query_listes_produits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_nom LIKE :rech AND eg_categorie_id = :cat ORDER BY eg_produit_prix ASC");
 								$PDO_query_listes_produits->bindParam(":cat", $cat, PDO::PARAM_INT);
+								$PDO_query_listes_produits->bindParam(":rech", $recherche, PDO::PARAM_STR);
 								
 							}elseif(strpos($str, $mot_2) !== false && $recherche == ''){
 								$scat = substr($str, -2);
-								echo $scat.'dddd';
 								$PDO_query_listes_produits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_sous_categorie_id = :scat ORDER BY eg_produit_prix ASC");
 								$PDO_query_listes_produits->bindParam(":scat", $scat, PDO::PARAM_INT);
 								
 							}elseif(strpos($str, $mot_2) !== false && $recherche != ''){
 								$scat = substr($str, -2);
-								echo $scat.'2';
-								$PDO_query_listes_produits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_nom LIKE '%".$recherche."%' AND eg_sous_categorie_id = :scat ORDER BY eg_produit_prix ASC");
+								$PDO_query_listes_produits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_nom LIKE :rech AND eg_sous_categorie_id = :scat ORDER BY eg_produit_prix ASC");
 								$PDO_query_listes_produits->bindParam(":scat", $scat, PDO::PARAM_INT);
+								$PDO_query_listes_produits->bindParam(":rech", $recherche, PDO::PARAM_STR);
 								
 							}else{
-								$PDO_query_listes_produits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_nom LIKE '%".$recherche."%' ORDER BY eg_produit_prix ASC");
+								$PDO_query_listes_produits = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_nom LIKE :rech ORDER BY eg_produit_prix ASC");
+								$PDO_query_listes_produits->bindParam(":rech", $recherche, PDO::PARAM_STR);
 								
 							}
 					
