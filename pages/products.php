@@ -2245,9 +2245,18 @@ include("../config/fonction.php");
 								
 								<div class="box-pagination col-md-12 col-sm-4 text-center">
 								<ul class="pagination">
-											<?php $chaine = $_SERVER['REQUEST_URI'];
-    												$nbr = 7;
-    										$lien = substr($chaine, 0, -$nbr);?>
+											<?php 
+											$chaine = $_SERVER['REQUEST_URI'];
+											$mot = "page=";
+
+											if(strpos($chaine, $mot) !== false){
+												$nbr = 7;
+												$lien = substr($chaine, 0, -$nbr);
+											}else{
+
+												$lien = $_SERVER['REQUEST_URI'];
+											}
+											?>
 											<li class="page-item <?= ($currentPage == 1) ? "disabled" : "" ?>">
 												<a href="<?php echo $lien;?>&page=<?= $currentPage - 1 ?>" class="page-link"><</a>
 											</li>
