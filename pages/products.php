@@ -5,7 +5,7 @@ echo
 echo
 	$_POST['categorieid']
 ;
-
+//ddd
     include("../config/fonction.php");
 
 		if(isset($_POST['recherche'])){
