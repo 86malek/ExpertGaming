@@ -31,8 +31,10 @@
 
 										echo '
 
-											<div class="product-image-container second_img">
-												<img src="admin/upload_images/' . $produit_top_vente_image['eg_image_produit_nom'] . '" alt="' . $produit_top_vente_image['eg_image_produit_title'] . '" class="img-responsive">
+											<div class="product-image-container lazy second_img">
+
+												<img data-src="admin/upload_images/' . $produit_top_vente_image['eg_image_produit_nom'] . '" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="' . $produit_top_vente_image['eg_image_produit_title'] . '" class="img-responsive">
+
 											</div>
 										';
 
@@ -146,12 +148,12 @@
 										if($produit_nouveau['eg_produit_disponibilite'] == 0){
 
 											echo'
-											<button class="addToCart addToCart--notext" type="button"  onclick="cart.add(\'42\', \'1\');" disabled><i class="fas fa-cart-plus"></i> <span class="button-group__text">Ajouter au panier</span></button>';
+											<button class="addToCart addToCart--notext" type="button"  disabled><i class="fas fa-cart-plus"></i> <span class="button-group__text">Ajouter au panier</span></button>';
 
 										}else{
 
 											echo'
-											<button class="addToCart addToCart--notext" type="button"  onclick="cart.add(\'42\', \'1\');"><i class="fas fa-cart-plus"></i> <span class="button-group__text">Ajouter au panier</span></button>';
+											<button class="addToCart addToCart--notext" type="button"><i class="fas fa-cart-plus"></i> <span class="button-group__text">Ajouter au panier</span></button>';
 
 										}
 										

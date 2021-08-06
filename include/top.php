@@ -38,7 +38,7 @@
 				
 				<!-- Search -->
 				<div id="sosearchpro" class="col-md-7 col-sm-7 search-pro">
-					<form method="POST" action="//<?php echo $_SERVER['SERVER_NAME']?>/ExpertGaming/pages/products.php">
+					<form method="POST" action="//<?php echo $_SERVER['SERVER_NAME']?>/ExpertGaming/pages/recherche.php">
 						<div id="search0" class="search input-group">
 							<div class="select_category filter_type icon-select">
 								<select class="no-border" name="categorieid">
@@ -54,7 +54,7 @@
 
 												echo '
 
-													<option value="' . $categorie['eg_categorie_id'] . '">' . $categorie['eg_categorie_nom'] . '</option>
+													<option value="cc ' . $categorie['eg_categorie_id'] . '">' . $categorie['eg_categorie_nom'] . '</option>
 
 												';
 
@@ -69,7 +69,7 @@
 
 														echo '
 		
-															<option value="' . $sous_categorie['eg_sous_categorie_id'] . '">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' . $sous_categorie['eg_sous_categorie_nom'] . '</option>
+															<option value="ss ' . $sous_categorie['eg_sous_categorie_id'] . '">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' . $sous_categorie['eg_sous_categorie_nom'] . '</option>
 		
 														';
 													}
@@ -102,10 +102,10 @@
 					<div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 shopping_cart pull-right">
 					<!--panier-->
 					<div class="btn-group btn-shopping-cart">
-						<a href="http://<?php echo $_SERVER['SERVER_NAME'] ?>/ExpertGaming/Panier" class="top_cart dropdown-toggle">
+						<a href="#" class="top_cart dropdown-toggle">
 							<div class="shopcart">
 								<span class="handle pull-left"><i class="bi bi-cart3"></i></span>
-								<span class="cart-counter">1</span>
+								<!-- <span class="cart-counter">1</span> -->
 							</div>
 						</a>
 					</div>
@@ -113,10 +113,10 @@
 
 					<!--favoris-->
 					<div class="btn-group btn-shopping-cart">
-						<a href="http://<?php echo $_SERVER['SERVER_NAME'] ?>/ExpertGaming/Identification" class="top_cart dropdown-toggle">
+						<a href="#" class="top_cart dropdown-toggle">
 							<div class="shopcart">
 								<span class="handle pull-left"><i class="bi bi-heart"></i></span>
-								<span class="cart-counter">2</span>
+								<!-- <span class="cart-counter">2</span> -->
 							</div>
 						</a>				
 					</div>
@@ -124,7 +124,7 @@
 
 					<!--Identification-->
 					<div class="btn-group btn-shopping-cart">
-						<a href="http://<?php echo $_SERVER['SERVER_NAME'] ?>/ExpertGaming/Identification" class="top_cart dropdown-toggle">
+						<a href="#" class="top_cart dropdown-toggle">
 							<div class="shopcart">
 								<span class="handle pull-left"><i class="bi bi-person"></i></span>
 							</div>
