@@ -50,6 +50,7 @@
 	<link href="../css/responsive.css" rel="stylesheet">
 	<link id="color_scheme" href="../css/theme.css" rel="stylesheet">
 	<link href="../css/responsive.css" rel="stylesheet">
+	<link href="../css/configurateur.css" rel="stylesheet">
 
 
 </head>
@@ -71,8 +72,7 @@
 		<div class="main-container container">
 			<ul class="breadcrumb">
 				<li><a href="Accueil"><i class="fa fa-home"></i></a></li>
-				<li><a href="#">Casque</a></li>
-				<li><a href="#">Casque gaming</a></li>
+				<li>Details du produit</li>
 
 			</ul>
 
@@ -158,7 +158,7 @@
 										$PDO_query_quickview_product_description = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_id = :eg_produit_id");
 										$PDO_query_quickview_product_description->bindParam(":eg_produit_id", $_GET['produit_id']);
 										$PDO_query_quickview_product_description->execute();
-											while ($quickview_product_description = $PDO_query_quickview_product_description->fetch()){
+										$quickview_product_description = $PDO_query_quickview_product_description->fetch();
 
 												echo '
 												<div class="content-product-right col-sm-6 col-xs-12">
@@ -195,7 +195,7 @@
 														<span class="price-new" itemprop="price">' . $quickview_product_description['eg_produit_promo'] . ' TND</span>
 														<span class="price-old">' . $quickview_product_description['eg_produit_prix'] . ' TND</span>
 													</div>
-											';
+												';
 
 
 												}else{
@@ -347,7 +347,7 @@
 											</div>
 											';
 
-									}
+									
 									$PDO_query_quickview_product_description->closeCursor();
 								?>
 
@@ -364,6 +364,7 @@
 						<div class="tabsslider  vertical-tabs col-xs-12">
 							<ul class="nav nav-tabs col-lg-2 col-sm-3">
 								<li class="active"><a data-toggle="tab" href="#tab-1">Description</a></li>
+								<li class="item_nonactive"><a data-toggle="tab" href="#tab-2">Composition</a></li>
 								<!-- <li class="item_nonactive"><a data-toggle="tab" href="#tab-review">Avis (1)</a></li> -->
 								<!-- <li class="item_nonactive"><a data-toggle="tab" href="#tab-4">Tags</a></li> -->
 								<!-- <li class="item_nonactive"><a data-toggle="tab" href="#tab-5">Custom Tab</a></li> -->
@@ -371,29 +372,49 @@
 							<div class="tab-content col-lg-10 col-sm-9 col-xs-12">
 
 
-							<?php
+									<?php											
 
-											$PDO_query_product_description = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_id = :eg_produit_id");
-											$PDO_query_product_description->bindParam(":eg_produit_id", $_GET['produit_id']);
-											$PDO_query_product_description->execute();
-												while ($product_description = $PDO_query_product_description->fetch()){
+									$str = str_replace('src="', 'src="https://betatest.expert-gaming.tn', $quickview_product_description['eg_produit_description_longue']);
+									echo '
 
-													echo '
+										<div id="tab-1" class="tab-pane fade active in">
+											<p>
+											' . $str . '
+											</p>
+										</div>
 
-														<div id="tab-1" class="tab-pane fade active in">
-															<p>
-															' . $product_description['eg_produit_description'] . '
-															</p>
-														</div>
-
-													';
-
-											}
-											$PDO_query_product_description->closeCursor();
+									';										
 
 									?>
 
-								
+									<?php 
+										if($quickview_product_description['eg_produit_pack'] == 1){
+										
+										echo '<div id="tab-2" class="tab-pane fade">
+												<!-- Accordion Item begin -->
+												<div class="accordion-item">
+													<div class="accordion-wrapper">
+														<div class="accordion-content wrapper col-sm-12" id="accordionContent">
+															<div class="accordion-content-left">
+																<div class="accordion-image">
+																	<img src="../EXPERT_LOGO/LD0005368478_2.jpg" alt="">
+																</div>
+																<div class="accordion-desc">
+																	<h4>Lorem ipsum dolor sit.</h4>
+																	<!-- <a href="#">Fiche produit</a> -->
+																</div>
+															</div>
+															<div class="accordion-content-right action">
+																<span class="quantité">X1</span>
+															</div>
+														</div>
+													</div>
+													<div class="clearfix"></div>
+												</div>
+												<!-- Accordion Item end -->
+											</div>';
+										}
+									?>
 
 								<!-- <div id="tab-review" class="tab-pane fade">
 									<form>

@@ -6595,6 +6595,7 @@ div.tab-slider .so-listing-tabs .owl2-controls .owl2-nav .owl2-next:hover {
   justify-content: space-between;
   align-items: center;
   border: 1px solid #191919;
+  height: 70px;
 }
 
 /* Style the Image Used to Trigger the Modal */
