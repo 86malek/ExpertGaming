@@ -63,8 +63,8 @@
 					echo '
 
 						<div class="item">
-							<a href="Configurateur"><img src="admin/upload_images/' . $img_config_banniere['eg_image_config_nom'] . '" alt="' . $img_config_banniere['eg_image_config_title'] . '" class="img-responsive"></a>
-							<div class="config"><a href="Configurateur">Configurateur</a></div>
+							<a href="#"><img src="admin/upload_images/' . $img_config_banniere['eg_image_config_nom'] . '" alt="' . $img_config_banniere['eg_image_config_title'] . '" class="img-responsive"></a>
+							<div class="config"><a href="#">Nos configurations</a></div>
 						</div>
 			
 					';

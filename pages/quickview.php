@@ -8,10 +8,8 @@
     
      <!-- Basic page needs
 	============================================ -->
-	 <title>Market - Premium Multipurpose HTML5/CSS3 Theme</title>
+	<title>Expert-Gaming | Détails rapide du produit</title>
 	 <meta charset="utf-8" />
-     <meta name="keywords" content="boostrap, responsive, html5, css3, jquery, theme, multicolor, parallax, retina, business" />
-     <meta name="author" content="Magentech" />
      <meta name="robots" content="index, follow" />
    
 	 <!-- Mobile specific metas
@@ -20,10 +18,6 @@
 	
 	 <!-- Favicon
 	============================================ -->
-     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png" />
-     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png" />
-     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png" />
-     <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png" />
      <link rel="shortcut icon" href="ico/favicon.png" />
 	
 	 <!-- Google web fonts
@@ -50,6 +44,7 @@
 	 <link href="../css/theme.css" rel="stylesheet" id="color_scheme" />
 	 <link id="color_scheme" href="../css/home8.css" rel="stylesheet">
 	 <link id="color_scheme" href="../css/home4.css" rel="stylesheet">
+	 <link id="color_scheme" href="../css/theme.css" rel="stylesheet">
 	 <link href="../css/responsive.css" rel="stylesheet"/>
 	
    
@@ -83,7 +78,7 @@
 
 												echo '
 
-													<img itemprop="image" class="product-image-zoom" src="http://'.$_SERVER['SERVER_NAME'].'/ExpertGaming/admin/upload_images/'.$quickview_product['eg_image_produit_nom'].'" data-zoom-image="http://'.$_SERVER['SERVER_NAME'].'/ExpertGaming/admin/upload_images/'.$quickview_product['eg_image_produit_nom'].'" title="' . $quickview_product['eg_image_produit_title'] . '" alt="' . $quickview_product['eg_image_produit_title'] . '" />
+													<img  id="myImg" src="http://'.$_SERVER['SERVER_NAME'].'/ExpertGaming/admin/upload_images/'.$quickview_product['eg_image_produit_nom'].'" title="' . $quickview_product['eg_image_produit_title'] . '" alt="' . $quickview_product['eg_image_produit_title'] . '" />
 
 												';
 
@@ -95,7 +90,20 @@
 
 								</div>
 								<!--Large Image End-->
+								<!-- The Modal -->
+								<div id="myModal" class="modal">
 
+								<!-- The Close Button -->
+								<span class="close">&times;</span>
+
+								<!-- Modal Content (The Image) -->
+								<img class="modal-content" id="img01">
+
+								<!-- Modal Caption (Image Text) -->
+								<div id="caption"></div>
+								</div>
+
+								<!--Large Image End-->
 								 <div id="thumb-slider" class="owl-theme owl-loaded owl-drag full_slider">
 										<?php
 
@@ -147,7 +155,6 @@
 														echo'
 														</div>
 													</div>
-													<a class="reviews_button" href="quickview.php.html" onclick="$(\'a[href=\'#tab-review\']\').trigger(\'click\'); return false;">0 Avis</a>	
 												</div>
 			   
 												<div class="product-label form-group">
@@ -157,7 +164,7 @@
 
 													echo'
 
-													<div class="product_page_price price" itemprop="offerDetails" itemscope="" itemtype="http://data-vocabulary.org/Offer">
+													<div class="product_page_price price" itemprop="offerDetails">
 														<span class="price-new" itemprop="price">' . $quickview_product_description['eg_produit_promo'] . ' TND</span>
 														<span class="price-old">' . $quickview_product_description['eg_produit_prix'] . ' TND</span>
 													</div>
@@ -167,7 +174,7 @@
 												}else{
 
 													echo'
-													<div class="product_page_price price" itemprop="offerDetails" itemscope="" itemtype="http://data-vocabulary.org/Offer">
+													<div class="product_page_price price" itemprop="offerDetails">
 														<span class="price">' . $quickview_product_description['eg_produit_prix'] . ' TND</span>
 													</div>
 													';
@@ -176,16 +183,16 @@
 
 
 
-												if($quickview_product_description['eg_produit_disponibilite'] == 0){
+												if($quickview_product_description['eg_produit_dispo'] == 0){
 
 													echo'
 
 													<div class="stock"><span class="status-outofstock">Hors stock</span></div>
 
-											';
+												';
 
 
-												}elseif($quickview_product_description['eg_produit_disponibilite'] == 1){
+												}elseif($quickview_product_description['eg_produit_dispo'] == 1){
 
 													echo'
 													
@@ -193,19 +200,19 @@
 
 													';
 
-												}elseif($quickview_product_description['eg_produit_disponibilite'] == 2){
-	
+												}elseif($quickview_product_description['eg_produit_dispo'] == 2){
+
 													echo'
 													
 													<div class="stock"><span class="status-commande">Sur commande 48H</span></div>
 
 													';
 
-												}elseif($quickview_product_description['eg_produit_disponibilite'] == 3){
-	
+												}else{
+
 													echo'
 													
-													<div class="stock"><span class="status-commande">Sur commande 48H</span></div>
+													<div class="stock"><span class="status-commande">Sur commande</span></div>
 
 													';
 
@@ -254,12 +261,12 @@
 														</div>
 														';
 
-														if($quickview_product_description['eg_produit_disponibilite'] == 0){
+														if($quickview_product_description['eg_produit_dispo'] == 0){
 
 															echo'
 		
 															<div class="cart">
-															<input type="button" data-toggle="tooltip" title="" value="Ajouter au panier" onclick="cart.add(\'42\', \'1\');" data-loading-text="Loading..." id="button-cart" class="btn btn-mega btn-lg" data-original-title="Ajouter au panier" disabled="disabled" />
+															<input type="button" data-toggle="tooltip" title="" value="Ajouter au panier" class="btn btn-mega btn-lg" data-original-title="Bientot disponible" disabled="disabled" />
 															</div>
 		
 															';
@@ -273,7 +280,7 @@
 															echo'
 															
 															<div class="cart">
-															<input type="button" data-toggle="tooltip" title="" value="Ajouter au panier" onclick="cart.add(\'42\', \'1\');" data-loading-text="Loading..." id="button-cart" class="btn btn-mega btn-lg" data-original-title="Ajouter au panier" />
+															<input type="button" data-toggle="tooltip" title="" value="Ajouter au panier" id="button-cart" class="btn btn-mega btn-lg" data-original-title="Bientot disponible" />
 															</div>
 		
 															';
@@ -290,11 +297,11 @@
 														<div class="add-to-links wish_comp">
 															<ul class="blank list-inline">
 																<li class="wishlist">
-																	<a class="icon" data-toggle="tooltip" title="" onclick="wishlist.add(\'50\');" data-original-title="Liste des favories"><i class="fa fa-heart"></i>
+																	<a class="icon" data-toggle="tooltip" title="" data-original-title="Bientot disponible"><i class="fa fa-heart"></i>
 																	</a>
 																</li>
 																<li class="compare">
-																	<a class="icon" data-toggle="tooltip" title="" onclick="compare.add(\'50\');" data-original-title="Comparer ce produit"><i class="fa fa-exchange"></i>
+																	<a class="icon" data-toggle="tooltip" title="" data-original-title="Bientot disponible"><i class="fa fa-exchange"></i>
 																	</a>
 																</li>
 															</ul>
@@ -330,28 +337,6 @@
 					
 				
 				 </div>
-				
-				 <script type="text/javascript">
-					// Cart add remove functions
-					var cart = {
-						'add': function(product_id, quantity) {
-							parent.addProductNotice('Product added to Cart', '<img src="image/demo/shop/product/e11.jpg" alt="">', '<h3><a href="#">Apple Cinema 30"</a> added to <a href="#">shopping cart</a>!</h3>', 'success');
-						}
-					}
-
-					var wishlist = {
-						'add': function(product_id) {
-							parent.addProductNotice('Product added to Wishlist', '<img src="image/demo/shop/product/e11.jpg" alt="">', '<h3>You must <a href="#">login</a>  to save <a href="#">Apple Cinema 30"</a> to your <a href="#">wish list</a>!</h3>', 'success');
-						}
-					}
-					var compare = {
-						'add': function(product_id) {
-							parent.addProductNotice('Product added to compare', '<img src="image/demo/shop/product/e11.jpg" alt="">', '<h3>Success: You have added <a href="#">Apple Cinema 30"</a> to your <a href="#">product comparison</a>!</h3>', 'success');
-						}
-					}
-
-					
-				</script>
 
 				
 			 </div>
@@ -398,6 +383,28 @@
  <script type="text/javascript" src="../js/themejs/so_megamenu.js"></script>
  <script type="text/javascript" src="../js/themejs/addtocart.js"></script>
  <script type="text/javascript" src="../js/themejs/application.js"></script>
+ <script>
+		// Get the modal
+		var modal = document.getElementById("myModal");
+
+		// Get the image and insert it inside the modal - use its "alt" text as a caption
+		var img = document.getElementById("myImg");
+		var modalImg = document.getElementById("img01");
+		var captionText = document.getElementById("caption");
+		img.onclick = function(){
+		modal.style.display = "block";
+		modalImg.src = this.src;
+		captionText.innerHTML = this.alt;
+		}
+
+		// Get the <span> element that closes the modal
+		var span = document.getElementsByClassName("close")[0];
+
+		// When the user clicks on <span> (x), close the modal
+		span.onclick = function() {
+		modal.style.display = "none";
+		}		
+	</script>
 
 </body>
 

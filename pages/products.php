@@ -2116,8 +2116,8 @@ include("../config/fonction.php");
 
 																echo '
 																	<div class="left-block">
-																		<div class="product-image-container lazy second_img  lazy-loaded">
-																			<img data-src="../admin/upload_images/' . $produits_image['eg_image_produit_nom'] . '" alt="' . $produits_image['eg_image_produit_title'] . '" class="img-responsive">
+																		<div class="product-image-container lazy second_img">
+																			<img data-src="../admin/upload_images/' . $produits_image['eg_image_produit_nom'] . '" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="' . $produits_image['eg_image_produit_title'] . '" class="img-responsive">
 																		</div>
 																';
 																
@@ -2259,18 +2259,18 @@ include("../config/fonction.php");
 														if($produits['eg_produit_disponibilite'] == 0){
 
 															echo'
-																			<button class="addToCart" type="button" data-toggle="tooltip" title="" onclick="cart.add(\'42\', \'1\');" data-original-title="Ajouter au panier" disabled><i class="fa fa-shopping-cart"></i> <span class="hidden-xs">Ajouter au panier</span></button>
+																			<button class="addToCart" type="button" data-toggle="tooltip" title="" data-original-title="Bientot disponible" disabled><i class="fa fa-shopping-cart"></i> <span class="hidden-xs">Ajouter au panier</span></button>
 															';
 														}else{
 															echo'
-															<button class="addToCart" type="button" data-toggle="tooltip" title="" onclick="cart.add(\'42\', \'1\');" data-original-title="Ajouter au panier"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs">Ajouter au panier</span></button>
+															<button class="addToCart" type="button" data-toggle="tooltip" title="" data-original-title="Bientot disponible"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs">Ajouter au panier</span></button>
 															
 															';
 														}
 
 														echo'
-																			<button class="wishlist" type="button" data-toggle="tooltip" title="" onclick="wishlist.add(\'42\');" data-original-title="Ajouter aux favoris"><i class="fa fa-heart"></i></button>
-																			<button class="compare" type="button" data-toggle="tooltip" title="" onclick="compare.add(\'42\');" data-original-title="Comparer"><i class="fa fa-exchange-alt"></i></button>
+																			<button class="wishlist" type="button" data-toggle="tooltip" title="" data-original-title="Bientot disponible"><i class="fa fa-heart"></i></button>
+																			<button class="compare" type="button" data-toggle="tooltip" title="" data-original-title="Bientot disponible"><i class="fa fa-exchange-alt"></i></button>
 																		</div>
 																	</div><!-- right block -->
 															

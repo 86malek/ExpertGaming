@@ -87,31 +87,39 @@
 
 								<!--Large Image Start-->
 
-										<?php
+								<?php
 
-											$PDO_query_verif_product = Bdd::connectBdd()->prepare("SELECT * FROM eg_image_produit WHERE eg_image_produit_statut = 1 AND eg_produit_id = :eg_produit_id LIMIT 1");
-											$PDO_query_verif_product->bindParam(":eg_produit_id", $_GET['produit_id']);
-											$PDO_query_verif_product->execute();
-												while ($verif_product = $PDO_query_verif_product->fetch()){
+									$PDO_query_verif_product = Bdd::connectBdd()->prepare("SELECT * FROM eg_image_produit WHERE eg_image_produit_statut = 1 AND eg_produit_id = :eg_produit_id LIMIT 1");
+									$PDO_query_verif_product->bindParam(":eg_produit_id", $_GET['produit_id']);
+									$PDO_query_verif_product->execute();
+										while ($verif_product = $PDO_query_verif_product->fetch()){
 
-													echo '
-													<div class="large-image">
-														<img itemprop="image" class="product-image-zoom" data-zoom-image="http://'.$_SERVER['SERVER_NAME'].'/ExpertGaming/admin/upload_images/'.$verif_product['eg_image_produit_nom'].'" src="http://'.$_SERVER['SERVER_NAME'].'/ExpertGaming/admin/upload_images/'.$verif_product['eg_image_produit_nom'].'" title="' . $verif_product['eg_image_produit_title'] . '" alt="' . $verif_product['eg_image_produit_title'] . '">
-													</div>
+											echo '
+											<div class="large-image">
+												<img id="myImg" src="http://'.$_SERVER['SERVER_NAME'].'/ExpertGaming/admin/upload_images/'.$verif_product['eg_image_produit_nom'].'" title="' . $verif_product['eg_image_produit_title'] . '" alt="' . $verif_product['eg_image_produit_title'] . '">
+											</div>
 
-													';
+											';
 
-												}
-											$PDO_query_verif_product->closeCursor();
+										}
+									$PDO_query_verif_product->closeCursor();
 
-										?>
+								?>
+
+								<!-- The Modal -->
+								<div id="myModal" class="modal">
+
+								<!-- The Close Button -->
+								<span class="close">&times;</span>
+
+								<!-- Modal Content (The Image) -->
+								<img class="modal-content" id="img01">
+
+								<!-- Modal Caption (Image Text) -->
+								<div id="caption"></div>
+								</div>
 
 								<!--Large Image End-->
-									
-
-									<a class="thumb-video pull-left" href="https://www.youtube.com/watch?v=HhabgvIIXik">
-										<i class="fa fa-youtube-play"></i>
-									</a>
 
 									<div id="thumb-slider" class="owl-theme owl-loaded owl-drag full_slider">
 
@@ -183,7 +191,7 @@
 
 													echo'
 
-													<div class="product_page_price price" itemprop="offerDetails" itemscope="" itemtype="http://data-vocabulary.org/Offer">
+													<div class="product_page_price price" itemprop="offerDetails">
 														<span class="price-new" itemprop="price">' . $quickview_product_description['eg_produit_promo'] . ' TND</span>
 														<span class="price-old">' . $quickview_product_description['eg_produit_prix'] . ' TND</span>
 													</div>
@@ -193,7 +201,7 @@
 												}else{
 
 													echo'
-													<div class="product_page_price price" itemprop="offerDetails" itemscope="" itemtype="http://data-vocabulary.org/Offer">
+													<div class="product_page_price price" itemprop="offerDetails">
 														<span class="price">' . $quickview_product_description['eg_produit_prix'] . ' TND</span>
 													</div>
 													';
@@ -208,7 +216,7 @@
 
 													<div class="stock"><span class="status-outofstock">Hors stock</span></div>
 
-											';
+												';
 
 
 												}elseif($quickview_product_description['eg_produit_dispo'] == 1){
@@ -267,38 +275,6 @@
 			   
 			   
 												<div id="product">
-													<!--<h4>Switch clavier</h4>
-													<div class="image_option_type form-group required">
-														<label class="control-label">Couleur</label>
-														<ul class="product-options clearfix"id="input-option231">
-															<li class="radio">
-																<label>
-																	<input class="image_radio" type="radio" name="option[231]" value="33">
-																	<img src="../image/demo/colors/blue.jpg" data-original-title="blue" class="img-thumbnail icon icon-color">
-																	<i class="fa fa-check"></i>
-																	<label> </label>
-																</label>
-															</li>
-															<li class="radio">
-																<label>
-																	<input class="image_radio" type="radio" name="option[231]" value="34"> 
-																	<img src="../image/demo/colors/brown.jpg" data-original-title="brown" class="img-thumbnail icon icon-color">
-																	<i class="fa fa-check"></i>
-																	<label> </label>
-																</label>
-															</li>
-															<li class="radio">
-																<label>
-																	<input class="image_radio" type="radio" name="option[231]" value="35">
-																	<img src="../image/demo/colors/green.jpg" data-original-title="green" class="img-thumbnail icon icon-color">
-																	<i class="fa fa-check"></i>
-																	<label> </label>
-																</label>
-															</li>
-															<li class="selected-option">
-															</li>
-														</ul>
-													</div>-->
 
 													<div class="form-group box-info-product">
 														<div class="option quantity">
@@ -317,7 +293,7 @@
 															echo'
 		
 															<div class="cart">
-															<input type="button" data-toggle="tooltip" title="" value="Ajouter au panier" onclick="cart.add(\'42\', \'1\');" data-loading-text="Loading..." id="button-cart" class="btn btn-mega btn-lg" data-original-title="Ajouter au panier" disabled="disabled" />
+															<input type="button" data-toggle="tooltip" title="" value="Bientot disponible" data-loading-text="Loading..." id="button-cart" class="btn btn-mega btn-lg" data-original-title="Ajouter au panier" disabled="disabled" />
 															</div>
 		
 															';
@@ -328,7 +304,7 @@
 															echo'
 															
 															<div class="cart">
-															<input type="button" data-toggle="tooltip" title="" value="Ajouter au panier" onclick="cart.add(\'42\', \'1\');" data-loading-text="Loading..." id="button-cart" class="btn btn-mega btn-lg" data-original-title="Ajouter au panier" />
+															<input type="button" data-toggle="tooltip" title="" value="Bientot disponible" data-loading-text="Loading..." id="button-cart" class="btn btn-mega btn-lg" data-original-title="Ajouter au panier" />
 															</div>
 		
 															';
@@ -341,11 +317,11 @@
 														<div class="add-to-links wish_comp">
 															<ul class="blank list-inline">
 																<li class="wishlist">
-																	<a class="icon" data-toggle="tooltip" title="" onclick="wishlist.add(\'50\');" data-original-title="Ajouter aux favoris"><i class="fa fa-heart"></i>
+																	<a class="icon" data-toggle="tooltip" title="" data-original-title="Bientot disponible"><i class="fa fa-heart"></i>
 																	</a>
 																</li>
 																<li class="compare">
-																	<a class="icon" data-toggle="tooltip" title="" onclick="compare.add(\'50\');" data-original-title="Comparer"><i class="fa fa-exchange-alt"></i>
+																	<a class="icon" data-toggle="tooltip" title="" data-original-title="Bientot disponible"><i class="fa fa-exchange-alt"></i>
 																	</a>
 																</li>
 															</ul>
@@ -419,7 +395,7 @@
 
 								
 
-								<div id="tab-review" class="tab-pane fade">
+								<!-- <div id="tab-review" class="tab-pane fade">
 									<form>
 										<div id="review">
 											<table class="table table-striped table-bordered">
@@ -490,51 +466,7 @@
 													class="btn buttonGray">Continue</a></div>
 										</div>
 									</form>
-								</div>
-
-							<!-- <div id="tab-4" class="tab-pane fade">
-								<a href="#">Monitor</a>,
-								<a href="#">Apple</a>
-							</div> -->
-
-								<!-- <div id="tab-5" class="tab-pane fade">
-				<h3 class="custom-color">Take a trivial example which of us ever undertakes</h3>
-				<p>Lorem ipsum dolor sit amet, consetetur
-					sadipscing elitr, sed diam nonumy eirmod
-					tempor invidunt ut labore et dolore
-					magna aliquyam erat, sed diam voluptua.
-					At vero eos et accusam et justo duo
-					dolores et ea rebum. Stet clita kasd
-					gubergren, no sea takimata sanctus est
-					Lorem ipsum dolor sit amet. Lorem ipsum
-					dolor sit amet, consetetur sadipscing
-					elitr, sed diam nonumy eirmod tempor
-					invidunt ut labore et dolore magna aliquyam
-					erat, sed diam voluptua. 
-				</p>
-
-				<p>At vero eos et accusam et justo duo dolores
-				et ea rebum. Stet clita kasd gubergren,
-				no sea takimata sanctus est Lorem ipsum
-				dolor sit amet. Lorem ipsum dolor sit
-				amet, consetetur sadipscing elitr.</p>
-
-				<ul class="marker-simple-list two-columns">
-					<li>Nam liberempore</li>
-					<li>Cumsoluta nobisest</li>
-					<li>Eligendptio cumque</li>
-					<li>Nam liberempore</li>
-					<li>Cumsoluta nobisest</li>
-					<li>Eligendptio cumque</li>
-				</ul>
-
-				<p>Sed diam nonumy eirmod tempor invidunt
-				ut labore et dolore magna aliquyam erat,
-				sed diam voluptua. At vero eos et accusam
-				et justo duo dolores et ea rebum. Stet
-				clita kasd gubergren, no sea takimata
-				sanctus est Lorem ipsum dolor sit amet.</p>
-			</div> -->
+								</div> -->
 
 							</div>
 						</div>
@@ -543,8 +475,7 @@
 
 					<!-- Related Products -->
 					<div class="related titleLine products-list grid module ">
-						<h3 class="modtitle">Autres produits de la marque :
-													</h3>
+						<h3 class="modtitle">Autres produits de la marque :</h3>
 						<div class="releate-products ">
 								<?php
 
@@ -559,7 +490,7 @@
 												<div class="product-layout">
 												<div class="product-item-container">
 													<div class="left-block">
-														<div class="product-image-container second_img ">
+														<div class="product-image-container lazy second_img ">
 														';
 														$PDO_query_produits_lies_img = Bdd::connectBdd()->prepare("SELECT * FROM eg_image_produit WHERE eg_image_produit_statut = 1 AND eg_produit_id = :eg_produit_id LIMIT 1");
 														$PDO_query_produits_lies_img->bindParam(":eg_produit_id", $produits_lies['eg_produit_id'], PDO::PARAM_INT);
@@ -568,8 +499,8 @@
 
 																echo '
 
-																<img src="http://'.$_SERVER['SERVER_NAME'].'/ExpertGaming/admin/upload_images/'.$produits_lies_img['eg_image_produit_nom'].'"
-																title="' . $produits_lies_img['eg_image_produit_title'] . '" class="img-responsive" />
+																<img data-src="http://'.$_SERVER['SERVER_NAME'].'/ExpertGaming/admin/upload_images/'.$produits_lies_img['eg_image_produit_nom'].'"
+																src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="' . $produits_lies_img['eg_image_produit_title'] . '" class="img-responsive" />
 
 
 																';
@@ -615,9 +546,7 @@
 															}	
 
 														echo'
-														<!--full quick view block-->
-																	<a class="quickview iframe-link visible-lg" data-fancybox-type="iframe" href="quickview.php?produit_id='.$produits_lies['eg_produit_id'].'">Aperçu rapide</a>
-																	<!--end full quick view block-->
+														<a class="quickview iframe-link visible-lg" data-fancybox-type="iframe" href="quickview.php?produit_id='.$produits_lies['eg_produit_id'].'">Aperçu rapide</a>
 													</div>
 				
 				
@@ -703,14 +632,14 @@
 														</div>
 				
 														<div class="button-group">
-															<button class="addToCart" type="button" data-toggle="tooltip" title="Ajouter au panier" onclick="cart.add(\'42\', \'1\');">
+															<button class="addToCart" type="button" data-toggle="tooltip" title="Bientot disponible" >
 																<i class="fa fa-shopping-cart"></i> 
 																<span class="hidden-xs">Ajouter au panier</span>
 															</button>
-															<button class="wishlist" type="button" data-toggle="tooltip" title="liste des favories" onclick="wishlist.add(\'42\');">
+															<button class="wishlist" type="button" data-toggle="tooltip" title="Bientot disponible">
 																<i class="fa fa-heart"></i>
 															</button>
-															<button class="compare" type="button" data-toggle="tooltip" title="Comparer ce produit" onclick="compare.add(\'42\');">
+															<button class="compare" type="button" data-toggle="tooltip" title="Bientot disponible" >
 																<i class="fa fa-exchange-alt"></i>
 															</button>
 														</div>
@@ -764,41 +693,27 @@
 	<script type="text/javascript" src="../js/themejs/homepage.js"></script>
 	<script type="text/javascript" src="../js/themejs/so_megamenu.js"></script>
 
-	<script>$(document).ready(function(){
-		$('.large-image').magnificPopup({
-		items: [
-			<?php
+	<script>
+		// Get the modal
+		var modal = document.getElementById("myModal");
 
-						$PDO_query_verif_product = Bdd::connectBdd()->prepare("SELECT * FROM eg_image_produit WHERE eg_image_produit_statut = 1 AND eg_produit_id = :eg_produit_id");
-						$PDO_query_verif_product->bindParam(":eg_produit_id", $_GET['produit_id']);
-						$PDO_query_verif_product->execute();
-
-							while ($verif_product = $PDO_query_verif_product->fetch()){
-
-									echo "
-											{src: 'http://".$_SERVER['SERVER_NAME']."/ExpertGaming/admin/upload_images/".$verif_product['eg_image_produit_nom']."' },
-										";
-
-							}
-
-						$PDO_query_verif_product->closeCursor();
-
-			?>
-			
-		],
-		gallery: { enabled: true, preload: [0,2] },
-		type: 'image',
-		mainClass: 'mfp-fade',
-		callbacks: {
-			open: function() {
-				
-				var activeIndex = parseInt($('#thumb-slider .img.active').attr('data-index'));
-				var magnificPopup = $.magnificPopup.instance;
-				magnificPopup.goTo(activeIndex);
-			}
+		// Get the image and insert it inside the modal - use its "alt" text as a caption
+		var img = document.getElementById("myImg");
+		var modalImg = document.getElementById("img01");
+		var captionText = document.getElementById("caption");
+		img.onclick = function(){
+		modal.style.display = "block";
+		modalImg.src = this.src;
+		captionText.innerHTML = this.alt;
 		}
-	});
-});
+
+		// Get the <span> element that closes the modal
+		var span = document.getElementsByClassName("close")[0];
+
+		// When the user clicks on <span> (x), close the modal
+		span.onclick = function() {
+		modal.style.display = "none";
+		}		
 	</script>
 
 

@@ -31,8 +31,8 @@
 
 										echo '
 
-											<div class="product-image-container second_img">
-												<img src="admin/upload_images/' . $produit_promo_image['eg_image_produit_nom'] . '" alt="' . $produit_promo_image['eg_image_produit_title'] . '" class="img-responsive">
+											<div class="product-image-container lazy second_img">
+												<img data-src="admin/upload_images/' . $produit_promo_image['eg_image_produit_nom'] . '" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="' . $produit_promo_image['eg_image_produit_title'] . '" class="img-responsive">
 											</div>
 										';
 

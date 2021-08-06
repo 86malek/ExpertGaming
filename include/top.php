@@ -102,10 +102,10 @@
 					<div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 shopping_cart pull-right">
 					<!--panier-->
 					<div class="btn-group btn-shopping-cart">
-						<a href="http://<?php echo $_SERVER['SERVER_NAME'] ?>/ExpertGaming/Panier" class="top_cart dropdown-toggle">
+						<a href="#" class="top_cart dropdown-toggle">
 							<div class="shopcart">
 								<span class="handle pull-left"><i class="bi bi-cart3"></i></span>
-								<span class="cart-counter">1</span>
+								<!-- <span class="cart-counter">1</span> -->
 							</div>
 						</a>
 					</div>
@@ -113,10 +113,10 @@
 
 					<!--favoris-->
 					<div class="btn-group btn-shopping-cart">
-						<a href="http://<?php echo $_SERVER['SERVER_NAME'] ?>/ExpertGaming/Identification" class="top_cart dropdown-toggle">
+						<a href="#" class="top_cart dropdown-toggle">
 							<div class="shopcart">
 								<span class="handle pull-left"><i class="bi bi-heart"></i></span>
-								<span class="cart-counter">2</span>
+								<!-- <span class="cart-counter">2</span> -->
 							</div>
 						</a>				
 					</div>
@@ -124,7 +124,7 @@
 
 					<!--Identification-->
 					<div class="btn-group btn-shopping-cart">
-						<a href="http://<?php echo $_SERVER['SERVER_NAME'] ?>/ExpertGaming/Identification" class="top_cart dropdown-toggle">
+						<a href="#" class="top_cart dropdown-toggle">
 							<div class="shopcart">
 								<span class="handle pull-left"><i class="bi bi-person"></i></span>
 							</div>
