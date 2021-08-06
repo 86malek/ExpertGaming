@@ -1,0 +1,302 @@
+.accordion-panel .accordion-list .accordion-item {
+  margin-bottom: 20px;
+}
+
+.accordion-panel .accordion-list .accordion-item .accordion-bondeau {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f7f1e3;
+  border: 1px solid #f7bb11;
+}
+
+.accordion-panel
+  .accordion-list
+  .accordion-item
+  .accordion-bondeau
+  .accordion-heading {
+  display: flex;
+  align-items: center;
+}
+
+.accordion-panel
+  .accordion-list
+  .accordion-item
+  .accordion-bondeau
+  .add-selection .iframe-link{
+  font-size: 30px;
+  color: #191919;
+}
+
+span[class^="ico-"] {
+  width: 60px;
+  height: 60px;
+  margin-right: 10px;
+  background-image: url("../EXPERT_LOGO/ico-configurateur.png");
+  background-size: 380px 462px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+
+span[class^="ico-"].ico-1 {
+  background-position: 0 0;
+}
+
+span[class^="ico-"].ico-2 {
+  background-position: -166px 0;
+}
+
+span[class^="ico-"].ico-3 {
+  background-position: -320px 0;
+}
+
+span[class^="ico-"].ico-4 {
+  background-position: -240px -80px;
+}
+
+span[class^="ico-"].ico-5 {
+  background-position: -80px 0px;
+}
+
+span[class^="ico-"].ico-6 {
+  background-position: -166px -80px;
+}
+
+span[class^="ico-"].ico-7 {
+  background-position: -240px 0px;
+}
+
+span[class^="ico-"].ico-8 {
+  background-position: 0px -80px;
+}
+
+span[class^="ico-"].ico-9 {
+  background-position: -80px -80px;
+}
+
+span[class^="ico-"].ico-10 {
+  background-position: -320px -240px;
+}
+
+span[class^="ico-"].ico-11 {
+  background-position: 0px -320px;
+}
+
+span[class^="ico-"].ico-12 {
+  background-position: -166px -400px;
+}
+
+span[class^="ico-"].ico-13 {
+  background-position: -80px -400px;
+}
+
+span[class^="ico-"].ico-14 {
+  background-position: -320px -405px;
+}
+
+span[class^="ico-"].ico-15 {
+  background-position: -320px -320px;
+}
+
+span[class^="ico-"].ico-16 {
+  background-position: 0px -405px;
+}
+
+span[class^="ico-"].ico-17 {
+  background-position: -247px -400px;
+}
+
+span[class^="ico-"].ico-18 {
+  background-position: -166px -320px;
+}
+
+.accordion-panel
+  .accordion-list
+  .accordion-item
+  .accordion-bondeau
+  .accordion-heading
+  .title {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  font-size: 22px;
+}
+
+/* .accordion-panel .accordion-list .accordion-item .accordion-wrapper.wrapper {
+  display: block;
+  top: -75px;
+} */
+
+.accordion-panel .accordion-list .accordion-wrapper .accordion-content {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  background-color: #fff;
+  border: 1px solid #e6e6e6;
+  border-top: none;
+  z-index: -1;
+  transition: all 0.1s ease-in;
+  -webkit-transition: all 0.1s ease-in;
+  -moz-transition: all 0.1s ease-in;
+  -ms-transition: all 0.1s ease-in;
+  -o-transition: all 0.1s ease-in;
+}
+
+.accordion-wrapper
+  .accordion-content
+  .accordion-content-left {
+  display: flex;
+  align-items: center;
+}
+
+.accordion-wrapper
+  .accordion-content
+  .accordion-content-left
+  .accordion-image {
+  width: 55px;
+  height: 55px;
+  margin-right: 20px;
+  margin-left: 5px;
+}
+
+.accordion-wrapper
+  .accordion-content-left
+  .accordion-image
+  img {
+  width: 100%;
+}
+
+.accordion-panel .accordion-list .accordion-content .accordion-content-right i {
+  font-size: 25px;
+  margin-right: 15px;
+}
+
+/*============================*/
+/*            Panier          */
+/*============================*/
+.panier {
+  background-color: #f7f1e3;
+  border: 1px solid #f7bb11;
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+
+.panier .product_list {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.panier .product_list .product-info {
+  display: flex;
+  align-items: center;
+}
+
+/* Icon dispo article dans le panier*/
+.dispo {
+  display: inline-block;
+  height: 15px;
+  width: 15px;
+  background-color: #32b414;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+/*Prix de l'article dans le panier*/
+.panier .product_list .price {
+  font-size: 14px;
+}
+
+/*Total prix des articles dans le panier*/
+.panier .total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/*Les titres dans le panier*/
+.panier h3 {
+  text-transform: uppercase;
+  color: #191919;
+  font-weight: bold;
+}
+
+
+.panier .total .title,
+.solde {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* disposition des boutons dans le bas du panier*/
+.panier .validate {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  margin: 10px 0 10px;
+}
+
+.panier .validate .btn-big {
+  background-color: #191919;
+  padding: 10px 20px;
+  font-size: 15px;
+  border: 1px solid transparent;
+  color: #fff;
+  font-weight: 600;
+  transition: 0.3s ease-in-out;
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  -ms-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+}
+
+.panier .validate .btn-big:hover {
+  background-color: #fff;
+  color: #191919;
+  border: 1px solid #f7bb11;
+}
+
+@media (max-width: 470px) {
+  .accordion-panel
+    .accordion-list
+    .accordion-item
+    .accordion-bondeau
+    .accordion-heading
+    i {
+    margin-right: 10px;
+  }
+
+  .accordion-panel
+    .accordion-list
+    .accordion-item
+    .accordion-bondeau
+    .accordion-heading
+    .title {
+    font-size: 17px;
+  }
+
+  .panier .validate {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .panier .validate .btn-big {
+    text-align: center;
+    margin: 0px 0 10px;
+  }
+}
+
+/*================================*/
+.showers {
+  display: flex !important;
+  top: 0px !important;
+}
+/*=================================*/
+
+/* .configurateur{
+  display: block;
+  width: 100%;
+  padding-bottom: 40px;
+  position: relative;
+  overflow-x: hidden;
+} */

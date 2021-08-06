@@ -1,0 +1,45 @@
+.product-view .left-content-product .accordion-heading{
+    display: flex;
+    justify-content: center;
+}
+
+td.details-control {
+    background: url('../dtatatables/DataTables-1.10.25/images/icons-plus-25.png') no-repeat center center;
+    cursor: pointer;
+}
+tr.shown td.details-control {
+    background: url('../dtatatables/DataTables-1.10.25/images/icons-moins-25.png') no-repeat center center;
+}
+/*============================*/
+/*           modal            */
+/*============================*/
+.product-view .left-content-product .content-product{
+    margin-top: 25px;
+    padding: 0;
+}
+
+.product-view 
+.left-content-product 
+.content-product 
+.dataTables_wrapper 
+.dataTable 
+thead{
+    background-color: #f7bb11;
+    text-align: center;
+}
+.product-view 
+.left-content-product 
+.content-product 
+.dataTables_wrapper 
+.dataTable 
+tbody tr td .add{
+    font-size: 30px;
+}
+.product-view 
+.left-content-product 
+.content-product 
+.dataTables_wrapper 
+.dataTable 
+tbody tr td:hover .add{
+    color: #f7bb11;
+}

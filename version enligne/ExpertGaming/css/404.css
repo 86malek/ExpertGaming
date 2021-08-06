@@ -1,0 +1,32 @@
+.container-fluid {
+  height: 65vh;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+.content-error {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.content-error .logo{
+    width: 180px;
+}
+.content-error .logo img{
+    width: 100%;
+}
+
+.content-error .error {
+  font-size: 350px;
+  color: #191919;
+  text-shadow: 8px 12px 8px #555555;
+}
+.error-message{
+    font-size: 50px;
+    color: #191919;
+    margin: 50px;
+}
