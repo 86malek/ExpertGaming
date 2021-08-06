@@ -8,6 +8,16 @@ echo
 
     include("../config/fonction.php");
 
+		if(isset($_POST['recherche'])){
+			$recherche = $_POST['recherche'];
+		}else{
+			$recherche = '';
+		}
+		if(isset($_POST['categorieid'])){
+			$categorieid = $_POST['categorieid'];
+		}else{
+			$categorieid = '';
+		}
 		if(isset($_GET['menu_id'])){
 			$menu_id = $_GET['menu_id'];
 		}else{
