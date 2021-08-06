@@ -364,7 +364,11 @@
 						<div class="tabsslider  vertical-tabs col-xs-12">
 							<ul class="nav nav-tabs col-lg-2 col-sm-3">
 								<li class="active"><a data-toggle="tab" href="#tab-1">Description</a></li>
-								<li class="item_nonactive"><a data-toggle="tab" href="#tab-2">Composition</a></li>
+								<?php 
+									if($quickview_product_description['eg_produit_pack'] == 1){
+									echo'<li class="item_nonactive"><a data-toggle="tab" href="#tab-2">Composition</a></li>';
+									}
+								?>
 								<!-- <li class="item_nonactive"><a data-toggle="tab" href="#tab-review">Avis (1)</a></li> -->
 								<!-- <li class="item_nonactive"><a data-toggle="tab" href="#tab-4">Tags</a></li> -->
 								<!-- <li class="item_nonactive"><a data-toggle="tab" href="#tab-5">Custom Tab</a></li> -->
@@ -391,27 +395,55 @@
 										if($quickview_product_description['eg_produit_pack'] == 1){
 										
 										echo '<div id="tab-2" class="tab-pane fade">
-												<!-- Accordion Item begin -->
-												<div class="accordion-item">
-													<div class="accordion-wrapper">
-														<div class="accordion-content wrapper col-sm-12" id="accordionContent">
-															<div class="accordion-content-left">
-																<div class="accordion-image">
-																	<img src="../EXPERT_LOGO/LD0005368478_2.jpg" alt="">
+												<!-- Accordion Item begin -->';
+												
+												$PDO_query_verif_product_pack = Bdd::connectBdd()->prepare("SELECT * FROM eg_pack_produit WHERE eg_pack_produit_statut = 1 AND eg_produit_id = :eg_produit_id");
+												$PDO_query_verif_product_pack->bindParam(":eg_produit_id", $_GET['produit_id']);
+												$PDO_query_verif_product_pack->execute();
+													while ($pack_produit = $PDO_query_verif_product_pack->fetch()){
+
+														$PDO_query_verif_product_pack_details = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_id = :eg_produit_id");
+														$PDO_query_verif_product_pack_details->bindParam(":eg_produit_id", $pack_produit['eg_produit_id']);
+														$PDO_query_verif_product_pack_details->execute();
+														$pack_produit_details = $PDO_query_verif_product_pack_details->fetch();
+														$PDO_query_verif_product_pack_details->closeCursor();
+
+														$PDO_query_verif_product_image = Bdd::connectBdd()->prepare("SELECT * FROM eg_image_produit WHERE eg_image_produit_statut = 1 AND eg_image_produit_ordre = 1 AND eg_produit_id = :eg_produit_id");
+														$PDO_query_verif_product_image->bindParam(":eg_produit_id", $pack_produit['eg_produit_id']);
+														$PDO_query_verif_product_image->execute();
+														$verif_product = $PDO_query_verif_product_image->fetch();														
+														$PDO_query_verif_product_image->closeCursor();
+															
+															echo '
+															<div class="accordion-item">
+																<div class="accordion-wrapper">
+																	<div class="accordion-content wrapper col-sm-12" id="accordionContent">
+																		<div class="accordion-content-left">
+																			<div class="accordion-image">
+																				<img src="'.$verif_product['eg_image_produit_nom'].'" alt="' . $verif_product['eg_image_produit_title'] . '">
+																			</div>
+																			<div class="accordion-desc">
+																				<h4>' . $pack_produit_details['eg_produit_nom'] . '</h4>
+																				<!-- <a href="#">Fiche produit</a> -->
+																			</div>
+																		</div>
+																		<div class="accordion-content-right action">
+																			<span class="quantité">X'.$pack_produit['eg_produit_id'].'</span>
+																		</div>
+																	</div>
 																</div>
-																<div class="accordion-desc">
-																	<h4>Lorem ipsum dolor sit.</h4>
-																	<!-- <a href="#">Fiche produit</a> -->
-																</div>
+																<div class="clearfix"></div>
 															</div>
-															<div class="accordion-content-right action">
-																<span class="quantité">X1</span>
-															</div>
-														</div>
-													</div>
-													<div class="clearfix"></div>
-												</div>
-												<!-- Accordion Item end -->
+
+															';
+														
+
+													}
+												$PDO_query_verif_product_pack->closeCursor();
+
+												
+
+										echo '<!-- Accordion Item end -->
 											</div>';
 										}
 									?>
