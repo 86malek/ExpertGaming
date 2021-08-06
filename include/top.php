@@ -38,7 +38,7 @@
 				
 				<!-- Search -->
 				<div id="sosearchpro" class="col-md-7 col-sm-7 search-pro">
-					<form method="POST" action="//<?php echo $_SERVER['SERVER_NAME']?>/ExpertGaming/pages/products.php">
+					<form method="POST" action="//<?php echo $_SERVER['SERVER_NAME']?>/ExpertGaming/pages/recherche.php">
 						<div id="search0" class="search input-group">
 							<div class="select_category filter_type icon-select">
 								<select class="no-border" name="categorieid">
@@ -54,7 +54,7 @@
 
 												echo '
 
-													<option value="' . $categorie['eg_categorie_id'] . '">' . $categorie['eg_categorie_nom'] . '</option>
+													<option value="cc ' . $categorie['eg_categorie_id'] . '">' . $categorie['eg_categorie_nom'] . '</option>
 
 												';
 
@@ -69,7 +69,7 @@
 
 														echo '
 		
-															<option value="' . $sous_categorie['eg_sous_categorie_id'] . '">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' . $sous_categorie['eg_sous_categorie_nom'] . '</option>
+															<option value="ss ' . $sous_categorie['eg_sous_categorie_id'] . '">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' . $sous_categorie['eg_sous_categorie_nom'] . '</option>
 		
 														';
 													}
