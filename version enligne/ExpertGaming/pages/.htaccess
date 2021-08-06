@@ -1,0 +1,68 @@
+Options +FollowSymlinks
+RewriteEngine on
+RewriteOptions Inherit
+
+ErrorDocument 400 https://betatest.expert-gaming.tn/error/erreur.php?erreur=400
+ErrorDocument 401 https://betatest.expert-gaming.tn/error/erreur.php?erreur=401
+ErrorDocument 402 https://betatest.expert-gaming.tn/error/erreur.php?erreur=402
+ErrorDocument 403 https://betatest.expert-gaming.tn/error/erreur.php?erreur=403
+ErrorDocument 404 https://betatest.expert-gaming.tn/error/erreur.php?erreur=404
+ErrorDocument 405 https://betatest.expert-gaming.tn/error/erreur.php?erreur=405
+ErrorDocument 500 https://betatest.expert-gaming.tn/error/erreur.php?erreur=500
+ErrorDocument 501 https://betatest.expert-gaming.tn/error/erreur.php?erreur=501
+ErrorDocument 502 https://betatest.expert-gaming.tn/error/erreur.php?erreur=502
+ErrorDocument 503 https://betatest.expert-gaming.tn/error/erreur.php?erreur=503
+ErrorDocument 504 https://betatest.expert-gaming.tn/error/erreur.php?erreur=504
+ErrorDocument 505 https://betatest.expert-gaming.tn/error/erreur.php?erreur=505
+
+
+#ACCUEIL
+RewriteRule ^Accueil$  index.php  [L]
+
+#CONFIGURATEUR
+RewriteRule ^Configurateur$  pages/configurateur.php  [L]
+
+#MODAL
+RewriteRule ^Modal$  pages/modal.php  [L]
+
+#A_PROPOSDE_NOUS
+RedirectMatch ^A_propos_de_nous$  pages/about_us.php  [L]
+
+#FAQ
+RewriteRule ^Faq$  pages/faq.php  [L]
+
+#HISTORIQUE DES COMMANDES
+RewriteRule ^Historique_des_commandes$  pages/historique.php  [L]
+
+#INFO SUR LA COMMANDE
+RewriteRule ^Suivi_commande$  pages/info_commande.php  [L]
+
+#NOUS CONTACTER
+RedirectMatch ^Nous_contacter$  pages/contact_us.php  [L]
+
+#INSCRIPTION
+RewriteRule ^Inscription$  pages/inscription.php  [L]
+
+#MON COMPTE
+RewriteRule ^Mon_compte$  pages/profile.php  [L]
+
+#FAVORIS
+RewriteRule ^Liste_des_favoris$  pages/favories.php  [L]
+
+#IDENTIFICATION
+RewriteRule ^Identification$  pages/connexion.php  [L]
+
+#PANIER
+RewriteRule ^Panier$  pages/panier.php  [L]
+
+#COMPARATEUR
+RewriteRule ^Comparateur$  pages/comparateur.php  [L]
+
+#SITE MAP
+RewriteRule ^Sitemap$  pages/sitemap.php  [L]
+
+
+#SERVICE ET ENTRETIEN
+RewriteRule ^ListeUsersEquipe1$  module/service_et_entretien/liste_contact.php  [L]
+RewriteRule ^PUsersEquipe1$  module/service_et_entretien/profil_contact.php  [L]
+RewriteRule ^ListeGroupeEquipe1$  module/service_et_entretien/liste_equipe.php  [L]

@@ -403,13 +403,13 @@
 													while ($pack_produit = $PDO_query_verif_product_pack->fetch()){
 
 														$PDO_query_verif_product_pack_details = Bdd::connectBdd()->prepare("SELECT * FROM eg_produit WHERE eg_produit_statut = 1 AND eg_produit_id = :eg_produit_id");
-														$PDO_query_verif_product_pack_details->bindParam(":eg_produit_id", $pack_produit['eg_produit_id']);
+														$PDO_query_verif_product_pack_details->bindParam(":eg_produit_id", $pack_produit['eg_pack_produit_ajout_id']);
 														$PDO_query_verif_product_pack_details->execute();
 														$pack_produit_details = $PDO_query_verif_product_pack_details->fetch();
 														$PDO_query_verif_product_pack_details->closeCursor();
 
 														$PDO_query_verif_product_image = Bdd::connectBdd()->prepare("SELECT * FROM eg_image_produit WHERE eg_image_produit_statut = 1 AND eg_image_produit_ordre = 1 AND eg_produit_id = :eg_produit_id");
-														$PDO_query_verif_product_image->bindParam(":eg_produit_id", $pack_produit['eg_produit_id']);
+														$PDO_query_verif_product_image->bindParam(":eg_produit_id", $pack_produit['eg_pack_produit_ajout_id']);
 														$PDO_query_verif_product_image->execute();
 														$verif_product = $PDO_query_verif_product_image->fetch();														
 														$PDO_query_verif_product_image->closeCursor();
@@ -420,7 +420,7 @@
 																	<div class="accordion-content wrapper col-sm-12" id="accordionContent">
 																		<div class="accordion-content-left">
 																			<div class="accordion-image">
-																				<img src="'.$verif_product['eg_image_produit_nom'].'" alt="' . $verif_product['eg_image_produit_title'] . '">
+																				<img src="'.$verif_product['eg_image_produit_nom'].'" alt="' . $verif_product['eg_image_produit_title'] . '" width="150">
 																			</div>
 																			<div class="accordion-desc">
 																				<h4>' . $pack_produit_details['eg_produit_nom'] . '</h4>
@@ -428,7 +428,7 @@
 																			</div>
 																		</div>
 																		<div class="accordion-content-right action">
-																			<span class="quantité">X'.$pack_produit['eg_produit_id'].'</span>
+																			<span class="quantité">X'.$pack_produit['eg_pack_produit_quantite'].'</span>
 																		</div>
 																	</div>
 																</div>
