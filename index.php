@@ -94,6 +94,12 @@
 				include("include/banniere.php");
 			?>
 		<!-- //Block slideshow  -->
+
+		<!-- Block nvelle config  -->
+		<?php
+				include("include/nvelle_config.php");
+			?>
+		<!-- //Block nvelle config  -->
 		
 		<!-- Main Container  -->
 		<div class="main-container ">
