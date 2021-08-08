@@ -1,5 +1,5 @@
 <div class="module titleLine">	
-	<h3 class="modtitle modtitle--small">Configuration</h3>
+	<h3 class="modtitle modtitle--small">Configurateur</h3>
 	<div class="module">
 		<div class="modcontent clearfix">
 			<div class="banner-wraps ">

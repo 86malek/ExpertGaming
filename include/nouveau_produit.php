@@ -109,11 +109,19 @@
 	
 														';
 	
-													}else{
+													}elseif($produit_nouveau['eg_produit_dispo'] == 3){
 	
 														echo'
 														
-														<div class="stock"><span class="label label-new">Sur commande</span></div>
+														<div class="stock"><span class="status-commande">Sur commande</span></div>
+	
+														';
+	
+													}elseif($produit_nouveau['eg_produit_dispo'] == 4){
+	
+														echo'
+														
+														<div class="stock"><span class="status-soon">En arrivage</span></div>
 	
 														';
 	

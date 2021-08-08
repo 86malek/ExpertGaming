@@ -104,11 +104,11 @@
 	
 														';
 	
-													}else{
+													}elseif($produit_promo['eg_produit_dispo'] == 4){
 	
 														echo'
 														
-														<div class="stock"><span class="status-commande">En arrivage</span></div>
+														<div class="stock"><span class="status-soon">En arrivage</span></div>
 	
 														';
 	

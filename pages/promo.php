@@ -2152,7 +2152,7 @@
 				
 																	';
 				
-																}else{
+																}elseif($produits['eg_produit_dispo'] == 4){
 				
 																	echo'
 																	

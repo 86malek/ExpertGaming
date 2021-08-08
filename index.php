@@ -96,7 +96,7 @@
 		<!-- //Block slideshow  -->
 
 		<!-- Block nvelle config  -->
-		<?php
+			<?php
 				include("include/nvelle_config.php");
 			?>
 		<!-- //Block nvelle config  -->

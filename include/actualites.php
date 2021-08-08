@@ -27,10 +27,13 @@ if($nb_comm == 0){
 										</a>
 									</div>
 								</div>
-								<div class="banner__info">	
-									<h3>' . $comm['eg_comm_sous_titre'] . '</h3>
-									<span class="article-author">Posté par : <a href="#">'.Membre::info($comm['eg_comm_user'], 'nom').' '.Membre::info($comm['eg_comm_user'], 'prenom').'</a></span> | <span class="article-date">Le : '.$date.'</span>
-								</div>
+								';
+								
+								// <div class="banner__info">	
+								// 	<h3>' . $comm['eg_comm_sous_titre'] . '</h3>
+								// 	<span class="article-author">Posté par : <a href="#">'.Membre::info($comm['eg_comm_user'], 'nom').' '.Membre::info($comm['eg_comm_user'], 'prenom').'</a></span> | <span class="article-date">Le : '.$date.'</span>
+								// </div>
+								echo'
 							</div>
 
 

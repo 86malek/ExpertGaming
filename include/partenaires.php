@@ -1,5 +1,5 @@
 <div class="module titleLine">
-	<h3 class="modtitle">Nos partenaires</h3>
+	<h3 class="modtitle">Nos marques</h3>
 		<div class="yt-content-slider yt-content-slider--arrow2"  data-autoplay="no" data-autoheight="no" data-delay="4" data-speed="0.6" data-margin="35" data-items_column0="5" data-items_column1="4" data-items_column2="3"  data-items_column3="2" data-items_column4="1" data-arrows="yes" data-pagination="no" data-lazyload="yes" data-loop="yes" data-hoverpause="yes">
 					<?php
 

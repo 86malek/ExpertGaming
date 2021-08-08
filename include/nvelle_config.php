@@ -1,4 +1,4 @@
-<div class="main-container mt-40">
+<div class="main-container">
 		<div class="container">
 		    <div class="row">
                 <div id="content-top" class="clearfix" >
