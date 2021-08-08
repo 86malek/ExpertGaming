@@ -5204,6 +5204,18 @@ div.tab-slider
   margin-right: 5px !important;
   margin-left: 0px !important;
 }
+.stock .status-soon {
+  color: #1f07f8;;
+}
+
+.stock .status-soon:before {
+  content: "\f046";
+  font-family: FontAwesome;
+  display: inline-block;
+  color: #1f07f8;
+  margin-right: 5px !important;
+  margin-left: 0px !important;
+}
 
 .left-content-product .content-product-right #product {
   float: left;

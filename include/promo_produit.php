@@ -96,11 +96,19 @@
 	
 														';
 	
-													}else{
+													}elseif($produit_promo['eg_produit_dispo'] == 3){
 	
 														echo'
 														
 														<div class="stock"><span class="status-commande">Sur commande</span></div>
+	
+														';
+	
+													}else{
+	
+														echo'
+														
+														<div class="stock"><span class="status-commande">En arrivage</span></div>
 	
 														';
 	

@@ -2144,11 +2144,19 @@
 				
 																	';
 				
+																}elseif($produits['eg_produit_dispo'] == 3){
+	
+																	echo'
+																	
+																	<div class="stock"><span class="status-commande">Sur commande</span></div>
+				
+																	';
+				
 																}else{
 				
 																	echo'
 																	
-																	<div class="stock"><span class="status-commande">Sur commande</span></div>
+																	<div class="stock"><span class="status-soon">En arrivage</span></div>
 				
 																	';
 				
@@ -2184,7 +2192,7 @@
 
 																		';
 
-														if($produits['eg_produit_disponibilite'] == 0){
+														if($produits['eg_produit_dispo'] == 0){
 
 															echo'
 																			<button class="addToCart" type="button" data-toggle="tooltip" title="" data-original-title="Bientot disponible" disabled><i class="fa fa-shopping-cart"></i> <span class="hidden-xs">Ajouter au panier</span></button>

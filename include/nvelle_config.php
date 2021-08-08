@@ -42,8 +42,8 @@
 
                                                         echo'            
                                                                         <div class="banner__info">
-                                                                            <h2>'.$nouveau_pack['eg_produit_nom'].'</h2>
-                                                                            <p>'.$nouveau_pack['eg_produit_modele'].'</p>
+                                                                            <h2>'.$nouveau_pack['eg_produit_modele'].'</h2>
+                                                                            <p>'.$nouveau_pack['eg_produit_nom'].'</p>
                                                                             <a title="Shop Now" href="#">Voir plus &gt;&gt;</a>
                                                                         </div>
                                                                 
